@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FraminghamRiskScore.Pages.FraminghamRiskScorePage"
+             BackgroundColor="#F4F5FA"
+             Title="Framingham Risk Score">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BorderColor1">Orange</Color>
+            <Color x:Key="BorderColor2">Brown</Color>
+
+            <Style x:Key="CustomBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 2,0,0,2" />
+                <Setter Property="Padding" Value="10,3" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Background" Value="#2B0B98" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <!-- Section: Idade -->
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <Border Style="{StaticResource CustomBorderStyle}" Background="#2B0B98" HorizontalOptions="Start" >
+                        <Border.Stroke>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Color="LightBlue" Offset="0.1" />
+                                <GradientStop Color="Green" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Border.Stroke>
+
+                        <Label Text="Idade"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold" />
+                    </Border>
+                    <Grid Margin="5, 5">
+                        <Entry x:Name="AgeEntry" Text="0"></Entry>
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+
+            <!-- Section: Género e Fumador -->
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
+                        <!-- Género -->
+                        <Border Style="{StaticResource CustomBorderStyle}">
+                            <Border.Stroke>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="LightBlue" Offset="0.1" />
+                                    <GradientStop Color="SteelBlue" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Stroke>
+                            <Label Text="Género"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+                        </Border>
+                        <Picker Grid.Row="1" Grid.Column="0"
+                                x:Name="GenderPicker"
+                                Title="Escolha género"
+                                Margin="2,5"
+                                CharacterSpacing="2"
+                                BackgroundColor="LightGray"
+                                SelectedIndexChanged="Gender_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Feminino</x:String>
+                                    <x:String>Masculino</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                        <!-- Fumador -->
+                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource CustomBorderStyle}">
+                            <Border.Stroke>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="LightBlue" Offset="0.1" />
+                                    <GradientStop Color="SteelBlue" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Stroke>
+                            <Label Text="Fumador"
+                                   TextColor="White"
+                                   FontSize="18"
+                                   FontAttributes="Bold" />
+                        </Border>
+                        <Switch x:Name="SmokerSwitch" IsToggled="False" HorizontalOptions="Center" 
+                                VerticalOptions="Center" Toggled="SmokerSwitch_Toggled"
+                                Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="1" Margin="15,2" Text="Toma medicação para a TA?" />
+                    <Switch Margin="15, 0" 
+                            x:Name="BllodPressureTreated" 
+                            IsToggled="False" 
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center" 
+                            Toggled="BllodPressureTreated_Toggled" />
+                </VerticalStackLayout>
+            </Grid>
+            <Grid Margin="10, 5" RowDefinitions="Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="Auto, 100">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="1" Grid.Column="0" Margin="15,2" Text="Colesterol Total (mg/dL)" />
+                    <Entry Grid.Row="1" Grid.Column="1" x:Name="TotalCholesterolEntry" Keyboard="Numeric" />
+                    <Label Grid.Row="2" Grid.Column="0" Margin="15,2" Text="HDL Colesterol (mg/dL)" />
+                    <Entry Grid.Row="2" Grid.Column="1" x:Name="HDLCholesterolEntry" Keyboard="Numeric" />
+                    <Label Grid.Row="3" Grid.Column="0" Margin="15,2" Text="Pressão arterial sistólica" />
+                    <Entry Grid.Row="3" Grid.Column="1" x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" />
+                </VerticalStackLayout>
+            </Grid>
+            <!-- Section: Button -->
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Color="{StaticResource Secondary}"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Button Text="Calcular" BackgroundColor="Green" FontSize="16"
+                        Margin="0,5"
+                        Clicked="Calcular_Clicked" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

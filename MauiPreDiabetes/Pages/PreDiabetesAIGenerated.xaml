@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPreDiabetes.PreDiabetesAIGenerated"
+             Title="PreDiabetesAIGenerated">
+    <StackLayout>
+        <Label Text="Pre-Diabetes Risk Calculator"
+               FontSize="20"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Entry x:Name="AgeEntry"
+               Placeholder="Enter Age"
+               Keyboard="Numeric"
+               Margin="10"/>
+
+        <Entry x:Name="BMIEntry"
+               Placeholder="Enter BMI"
+               Keyboard="Numeric"
+               Margin="10"/>
+
+        <Switch x:Name="FamilyHistorySwitch"
+                Margin="10"
+                IsToggled="False"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+        <Label Text="Family History of Diabetes"
+               VerticalOptions="Center"/>
+
+        <Switch x:Name="ActiveLifestyleSwitch"
+                Margin="10"
+                IsToggled="False"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+        <Label Text="Active Lifestyle"
+               VerticalOptions="Center"/>
+
+        <Button Text="Calculate"
+                Clicked="CalculateButton_Clicked"
+                BackgroundColor="Green"
+                TextColor="White"
+                Margin="10"/>
+
+        <Label x:Name="ResultLabel"
+               FontSize="18"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+</ContentPage>

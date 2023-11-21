@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#F4F5FA"
+             x:Class="MauiPreDiabetes.PreDiabetesPage">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BorderColor1">Orange</Color>
+            <Color x:Key="BorderColor2">Brown</Color>
+
+            <Style x:Key="CustomBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 2,0,0,2" />
+                <Setter Property="Padding" Value="10,3" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Background" Value="#2B0B98" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <!-- Section: Grupo de Idades -->
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <Border Style="{StaticResource CustomBorderStyle}" Background="#2B0B98" HorizontalOptions="Start" >
+                        <Border.Stroke>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Color="LightBlue" Offset="0.1" />
+                                <GradientStop Color="Green" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Border.Stroke>
+
+                        <!-- ... Your existing code for Grupo de Idades ... -->
+                        <Label Text="Grupo de Idades"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold" />
+                    </Border>
+                    <Grid Margin="5, 5">
+                        <!-- ... Your existing code for the Picker ... -->
+                        <Picker Title="Escolha grupo de idades"
+                                CharacterSpacing="2"
+                                BackgroundColor="LightGray"
+                                x:Name="GroupOfAges"  Margin="2,2"
+                                SelectedIndexChanged="GroupOfAges_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Menos de 35 anos</x:String>
+                                    <x:String>35-44 anos</x:String>
+                                    <x:String>45-54 anos</x:String>
+                                    <x:String>55-64 anos</x:String>
+                                    <x:String>65 anos ou mais</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+
+            <!-- Section: Género e Fumador -->
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
+                        <!-- Género -->
+                        <Border Style="{StaticResource CustomBorderStyle}">
+                            <Border.Stroke>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="LightBlue" Offset="0.1" />
+                                    <GradientStop Color="SteelBlue" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Stroke>
+                            <Label Text="Género"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+                        </Border>
+                        <Picker Grid.Row="1" Grid.Column="0"
+                                x:Name="Gender"
+                                Title="Escolha género"
+                                Margin="2,5"
+                                CharacterSpacing="2"
+                                BackgroundColor="LightGray"
+                                SelectedIndexChanged="GenderGroup_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Feminino</x:String>
+                                    <x:String>Masculino</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                        <!-- Fumador -->
+                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource CustomBorderStyle}">
+                            <Border.Stroke>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="LightBlue" Offset="0.1" />
+                                    <GradientStop Color="SteelBlue" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Stroke>
+                            <Label Text="Fumador"
+                                   TextColor="White"
+                                   FontSize="18"
+                                   FontAttributes="Bold" />
+                        </Border>
+                        <Switch x:Name="Smoker" IsToggled="False" HorizontalOptions="Center" 
+                                VerticalOptions="Center" Toggled="Smoker_Toggled"
+                                Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="1" Margin="15,2" Text="Toma medicação para a Hipertensão?" />
+                    <Switch Margin="15, 0" 
+                            x:Name="HipertensaoMedication" 
+                            IsToggled="False" 
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center" 
+                            Toggled="HipertensaoMedication_Toggled" />
+                </VerticalStackLayout>
+            </Grid>
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="1" Margin="15,2" Text="Detectou glucose elevada em análises?" />
+                    <Switch Margin="15, 0" x:Name="GlucoseInTests" IsToggled="False" HorizontalOptions="Start"
+                            VerticalOptions="Center" Toggled="Glucose_Toggled" />
+                </VerticalStackLayout>
+            </Grid>
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                 CornerRadius="10"
+                 Margin="0,0"
+                 HeightRequest="3"
+                 VerticalOptions="Center"
+                 HorizontalOptions="FillAndExpand" />
+
+                    <Label Grid.Row="1" Margin="15,2" Text="Parente próximo com diabetes?" />
+                    <Switch Margin="15, 0" x:Name="ParenteDiabetes" IsToggled="False" HorizontalOptions="Start"
+                VerticalOptions="Center" Toggled="ParenteDiabetes_Toggled" />
+                </VerticalStackLayout>
+            </Grid>
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                 CornerRadius="10"
+                 Margin="0,0"
+                 HeightRequest="3"
+                 VerticalOptions="Center"
+                 HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="1" Margin="15,2" Text="Dispensa 30 minutos diários para atividade física?" />
+                    <Switch Margin="15, 0" x:Name="AtividadeFisica" IsToggled="False" HorizontalOptions="Start"
+                VerticalOptions="Center" Toggled="AtividadeFisica_Toggled" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+
+                    <Grid Grid.Row="1" Margin="15,0">
+                        <VerticalStackLayout RadioButtonGroup.GroupName="FrequenciaVegetais" VerticalOptions="Start">
+                            <Label Text="Com que frequência come vegetais e fruta?" />
+                            <RadioButton FontSize="Small" IsChecked="True" Content="Todos os dias" CheckedChanged="FrequenciaVegetais_CheckedChanged"  />
+                            <RadioButton FontSize="Small" IsChecked="False" Content="Por vezes" CheckedChanged="FrequenciaVegetais_CheckedChanged" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+            <!-- Section: Largura de Anca -->
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Grid.Row="0" Color="SteelBlue"
+                 CornerRadius="10"
+                 Margin="0,0"
+                 HeightRequest="3"
+                 VerticalOptions="Center"
+                 HorizontalOptions="FillAndExpand" />
+
+                    <Border Grid.Row="0" Grid.Column="0" StrokeThickness="2"
+                            StrokeShape="RoundRectangle 11"
+                            Background="SteelBlue"
+                            Padding="10,3"
+                            HorizontalOptions="FillAndExpand">
+                        <Label TextColor="White" 
+                                   HeightRequest="30" 
+                                   FontSize="Medium"
+                                   VerticalOptions="Center" 
+                                   Text="Largura de Anca"/>
+                    </Border>
+
+                    <Grid Margin="5,0" RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
+                        <!-- Homens -->
+                        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource CustomBorderStyle}">
+                            <Label Text="Homens"
+                                   TextColor="White"
+                                   FontSize="16"
+                                   FontAttributes="Bold" />
+                        </Border>
+                        <Picker Grid.Row="1" Grid.Column="0"
+                                Title="Largura de anca"
+                                x:Name="ManWaistPicker"
+                                Margin="2,5"
+                                CharacterSpacing="2"
+                                BackgroundColor="LightGray"
+                                SelectedIndexChanged="ManWaist_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Menos 102 cm</x:String>
+                                    <x:String>102 - 110 cm</x:String>
+                                    <x:String>Mais de 110 cm</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                        <!-- Mulheres -->
+                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource CustomBorderStyle}">
+                            <Label Text="Mulheres"
+                                   TextColor="White"
+                                   FontSize="16"
+                                   FontAttributes="Bold" />
+                        </Border>
+                        <Picker Grid.Row="1" Grid.Column="1"
+                                Title="Largura de anca"
+                                x:Name="WomanWaistPicker"  
+                                Margin="2,5"
+                                CharacterSpacing="2"
+                                BackgroundColor="LightGray"
+                                SelectedIndexChanged="WomanWaist_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Menos 88 cm</x:String>
+                                    <x:String>88 - 100 cm</x:String>
+                                    <x:String>Mais de 100 cm</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+            <!-- Section: Button -->
+            <Grid Margin="10, 5">
+                <VerticalStackLayout>
+                    <BoxView Color="{StaticResource Secondary}"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Button Text="Calcular" BackgroundColor="Green" FontSize="16"
+                        Margin="0,5"
+                        Clicked="Calcular_Clicked" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPreDiabetes.Pages.PreDiabetesIntroPage"
+             xmlns:local="clr-namespace:MauiPreDiabetes.Pages"
+             Title="Calculadora de Pré-Diabetes">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BorderColor1">Orange</Color>
+            <Color x:Key="BorderColor2">Brown</Color>
+
+            <Style x:Key="CustomBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 20,0,0,20" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Background" Value="SteelBlue" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Margin="10,10">
+            <Border Style="{StaticResource CustomBorderStyle}" HorizontalOptions="Start" >
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="White" Offset="0.1" />
+                        <GradientStop Color="WhiteSmoke" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+
+                <Label Text="Introdução"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold" />
+            </Border>
+            <BoxView Grid.Row="0" Color="SteelBlue"
+                 CornerRadius="10"
+                 Margin="0,0, 0, 5"
+                 HeightRequest="3"
+                 VerticalOptions="Center"
+                 HorizontalOptions="FillAndExpand" />
+            <TableView Intent="Menu">
+                <TableRoot>
+                    <TableSection Title="Modelo usado">
+                        <TextCell Text="1. Grupo de idades (em anos)"
+                      Detail="- Menos de 35, 35-44, 45-54, 55-64 e 65 ou mais" />
+                        <TextCell Text="2. Hábito de fumar"
+                      Detail=""/>
+                        <TextCell Text="3. Medicação para a tensão arterial"
+                      Detail="" />
+                        <TextCell Text="4. Pais com diabetes"
+                      Detail="" />
+                        <TextCell Text="5. Atividade física"
+                      Detail="" />
+                        <TextCell Text="6. Consumo de vegetais"
+                      Detail="" />
+                        <TextCell Text="7.Circunferência da cintura para mulheres e homens."
+                      Detail="" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,10"
+                         HeightRequest="1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+            <VerticalStackLayout>
+                <Grid Margin="5,5">
+                    <Label Text="Os factores de risco enumerados no modelo apresentado são relevantes, e abrangem uma variedade de aspectos que podem contribuir para o risco de diabetes. "/>
+                </Grid>
+                <Grid Margin="5,5" RowDefinitions="Auto, Auto">
+                    <Label Text="Vamos analisar cada fator:"/>
+                    <Label Grid.Row="1" Padding="0, 10" Text="- Grupo de Idades: A idade é um fator significativo, e a sua categorização em grupos permite uma avaliação mais matizada."/>
+                </Grid>
+                <Grid Margin="5,5" RowDefinitions="Auto, Auto">
+                    <Label Grid.Row="0" Text="- Hábito de fumar: O hábito de fumar tem sido associado a um risco acrescido de diabetes tipo 2, pelo que a sua inclusão como fator de risco é adequada."/>
+                </Grid>
+                <Grid Margin="5,5" RowDefinitions="Auto, Auto">
+                    <Label Text="- Medicação para a tensão arterial: A hipertensão é um fator de risco conhecido para a diabetes, pelo que é relevante incluir se alguém está a tomar medicação para a tensão arterial."/>
+                    <Label Grid.Row="1" Padding="0, 10" Text="- Pais com diabetes: A história familiar é um fator crucial para avaliar a predisposição genética para a diabetes."/>
+                </Grid>
+                <Grid Margin="5,5" RowDefinitions="Auto, Auto">
+                    <Label Text="- Atividade física: A atividade física regular está associada a um menor risco de diabetes, pelo que a sua inclusão é importante."/>
+                    <Label Grid.Row="1" Padding="0, 10" Text="- Consumo de legumes: Os hábitos alimentares, incluindo o consumo de vegetais, desempenham um papel no risco de diabetes.."/>
+                </Grid>
+                <Grid Margin="5,5">
+                    <Label Text="- Circunferência da cintura para homens e mulheres: A obesidade abdominal, medida pela circunferência da cintura, é um fator de risco bem estabelecido."/>
+                </Grid>
+            </VerticalStackLayout>
+            <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+            <VerticalStackLayout>
+                <Grid Margin="5,10">
+                    <Label Text="A consideração destes factores proporciona uma visão holística do risco de um indivíduo desenvolver diabetes. No entanto, a precisão da avaliação do risco também depende dos pesos atribuídos a cada fator e do algoritmo específico utilizado para calcular a pontuação de risco global."/>
+                </Grid>
+                <Grid Margin="5,5">
+                    <Label Text="Seguem-se algumas sugestões adicionais:" FontAttributes="Bold"/>
+                </Grid>
+                <Grid Margin="5,5" RowDefinitions="Auto, Auto, Auto, Auto, *">
+                    <Label Grid.Row="0" Padding="0,10">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Fontes de Dados: " FontAttributes="Bold"></Span>
+                                <Span Text="Certifique-se de que dispõe de fontes de dados fiáveis para cada fator. Para alguns factores, os dados auto-relatados podem ser menos precisos do que as medições objectivas."></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="1" Padding="0,10">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Factores de ponderação" FontAttributes="Bold"></Span>
+                                <Span Text=": Considere a possibilidade de consultar profissionais de saúde ou utilizar métodos estatísticos para determinar os pesos adequados para cada fator com base na sua importância relativa na previsão do risco de diabetes.."></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="2" Padding="0,10">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Validação do modelo" FontAttributes="Bold"></Span>
+                                <Span Text=": Se possível, valide o seu modelo de avaliação de risco com dados do mundo real para avaliar a sua precisão e fiabilidade."></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="3" Padding="0,10">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Melhoria contínua" FontAttributes="Bold"></Span>
+                                <Span Text=": Reveja e actualize regularmente o seu modelo com base na investigação emergente e em novos conhecimentos sobre os factores de risco da diabetes."></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="4" Padding="0, 10" Text="Lembre-se que o desenvolvimento de um modelo de avaliação de risco é um processo contínuo que pode beneficiar da colaboração com profissionais de saúde e do aperfeiçoamento contínuo com base nos últimos resultados da investigação!"/>
+                </Grid>
+                
+                <FlexLayout JustifyContent="Center">
+                    <Button x:Name="SimulationBtn" Text="Simulação" Clicked="SimulationBtn_Clicked" FontSize="18"></Button>
+                </FlexLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
