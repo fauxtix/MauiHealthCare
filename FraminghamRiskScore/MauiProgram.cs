@@ -1,6 +1,7 @@
 ﻿using FraminghamRiskScore.Pages;
 using Microsoft.Extensions.Logging;
 using FraminghamRiskScore.Handlers;
+using FraminghamRiskScore.Services;
 
 
 namespace FraminghamRiskScore
@@ -21,9 +22,11 @@ namespace FraminghamRiskScore
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-            FormHandler.RemoveBorders();
+            //FormHandler.RemoveBorders();
             builder.Services.AddSingleton<FraminghamIntroPage>();
-            builder.Services.AddSingleton<FraminghamRiskScorePage>();
+            builder.Services.AddTransient<FraminghamRiskScorePage>();
+
+            builder.Services.AddSingleton<IFRS_Service, FRS_Service>();
 
             return builder.Build();
         }

@@ -22,117 +22,84 @@
 
     <ScrollView>
         <VerticalStackLayout>
-
-            <!-- Section: Idade -->
-            <Grid Margin="10, 5">
-                <VerticalStackLayout>
-                    <Border Style="{StaticResource CustomBorderStyle}" Background="#2B0B98" HorizontalOptions="Start" >
-                        <Border.Stroke>
-                            <LinearGradientBrush EndPoint="0,1">
-                                <GradientStop Color="LightBlue" Offset="0.1" />
-                                <GradientStop Color="Green" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Border.Stroke>
-
-                        <Label Text="Idade"
-                               TextColor="White"
-                               FontSize="18"
-                               FontAttributes="Bold" />
-                    </Border>
-                    <Grid Margin="5, 5">
-                        <Entry x:Name="AgeEntry" Text="0"></Entry>
-                    </Grid>
-                </VerticalStackLayout>
-            </Grid>
-
-            <!-- Section: Género e Fumador -->
-            <Grid Margin="10, 5">
-                <VerticalStackLayout>
-                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
-                        <!-- Género -->
-                        <Border Style="{StaticResource CustomBorderStyle}">
-                            <Border.Stroke>
-                                <LinearGradientBrush EndPoint="0,1">
-                                    <GradientStop Color="LightBlue" Offset="0.1" />
-                                    <GradientStop Color="SteelBlue" Offset="1.0" />
-                                </LinearGradientBrush>
-                            </Border.Stroke>
-                            <Label Text="Género"
-                           TextColor="White"
-                           FontSize="18"
-                           FontAttributes="Bold" />
-                        </Border>
-                        <Picker Grid.Row="1" Grid.Column="0"
-                                x:Name="GenderPicker"
-                                Title="Escolha género"
-                                Margin="2,5"
-                                CharacterSpacing="2"
-                                BackgroundColor="LightGray"
-                                SelectedIndexChanged="Gender_SelectedIndexChanged">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Feminino</x:String>
-                                    <x:String>Masculino</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
-                        </Picker>
-
-                        <!-- Fumador -->
-                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource CustomBorderStyle}">
-                            <Border.Stroke>
-                                <LinearGradientBrush EndPoint="0,1">
-                                    <GradientStop Color="LightBlue" Offset="0.1" />
-                                    <GradientStop Color="SteelBlue" Offset="1.0" />
-                                </LinearGradientBrush>
-                            </Border.Stroke>
-                            <Label Text="Fumador"
-                                   TextColor="White"
-                                   FontSize="18"
-                                   FontAttributes="Bold" />
-                        </Border>
-                        <Switch x:Name="SmokerSwitch" IsToggled="False" HorizontalOptions="Center" 
-                                VerticalOptions="Center" Toggled="SmokerSwitch_Toggled"
-                                Grid.Row="1" Grid.Column="1"/>
-                    </Grid>
-                </VerticalStackLayout>
-            </Grid>
-
-            <Grid Margin="10, 5">
-                <VerticalStackLayout>
-                    <BoxView Grid.Row="0" Color="SteelBlue"
+            <Grid Margin="0, 30, 0, 0">
+                <BoxView Color="{StaticResource Secondary}"
                          CornerRadius="10"
                          Margin="0,0"
                          HeightRequest="3"
                          VerticalOptions="Center"
                          HorizontalOptions="FillAndExpand" />
-                    <Label Grid.Row="1" Margin="15,2" Text="Toma medicação para a TA?" />
-                    <Switch Margin="15, 0" 
+
+            </Grid>
+            <!-- Section: Idade -->
+            <Grid Margin="10, 5" ColumnDefinitions="220,50">
+                <Label Grid.Column="0" Text="Idade" Margin="10"
+                       VerticalOptions="Center"/>
+                <Entry Grid.Column="1" x:Name="AgeEntry" 
+                      VerticalOptions="Center" 
+                      HorizontalOptions="Center"
+                      Text="55"/>
+            </Grid>
+
+            <!-- Section: Género e Fumador -->
+            <Grid Margin="10, 5" ColumnDefinitions="220, *">
+                <!-- Género -->
+                <Label Text="Género"
+                       Grid.Column="0"
+                       Margin="10"/>
+                <Picker  x:Name="GenderPicker"
+                         Title="Escolha género"
+                         Margin="2,0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Start"
+                         Grid.Column="1"
+                         CharacterSpacing="2"
+                         BackgroundColor="LightGray"
+                         SelectedIndexChanged="Gender_SelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Feminino</x:String>
+                            <x:String>Masculino</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>
+            <Grid Margin="10, 5" ColumnDefinitions="220, *">
+                <!-- Fumador -->
+                <Label Text="Fumador" Margin="10"
+                               Grid.Column="0"/>
+                <Switch x:Name="SmokerSwitch" Grid.Column="1" IsToggled="False" HorizontalOptions="Start" 
+                                VerticalOptions="Center" Toggled="SmokerSwitch_Toggled"/>
+            </Grid>
+            <Grid Margin="10, 5" ColumnDefinitions="220, *">
+                <Label Grid.Column="0" Margin="10" Text="Toma medicação para a TA?" />
+                <Switch Grid.Column="1"  
                             x:Name="BllodPressureTreated" 
                             IsToggled="False" 
                             HorizontalOptions="Start"
                             VerticalOptions="Center" 
                             Toggled="BllodPressureTreated_Toggled" />
-                </VerticalStackLayout>
             </Grid>
-            <Grid Margin="10, 5" RowDefinitions="Auto, Auto, Auto, Auto"
-                  ColumnDefinitions="Auto, 100">
-                <VerticalStackLayout>
-                    <BoxView Grid.Row="0" Color="SteelBlue"
-                         CornerRadius="10"
-                         Margin="0,0"
-                         HeightRequest="3"
-                         VerticalOptions="Center"
-                         HorizontalOptions="FillAndExpand" />
-                    <Label Grid.Row="1" Grid.Column="0" Margin="15,2" Text="Colesterol Total (mg/dL)" />
-                    <Entry Grid.Row="1" Grid.Column="1" x:Name="TotalCholesterolEntry" Keyboard="Numeric" />
-                    <Label Grid.Row="2" Grid.Column="0" Margin="15,2" Text="HDL Colesterol (mg/dL)" />
-                    <Entry Grid.Row="2" Grid.Column="1" x:Name="HDLCholesterolEntry" Keyboard="Numeric" />
-                    <Label Grid.Row="3" Grid.Column="0" Margin="15,2" Text="Pressão arterial sistólica" />
-                    <Entry Grid.Row="3" Grid.Column="1" x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" />
-                </VerticalStackLayout>
+            <Grid Margin="10, 5"
+                  RowDefinitions="Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="220, 50">
+                <Label Grid.Row="1" Grid.Column="0" 
+                       VerticalOptions="Center" 
+                       Margin="10"
+                       Text="Colesterol Total (mg/dL)" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="TotalCholesterolEntry" Keyboard="Numeric" Text="180" />
+                <Label Grid.Row="2" Grid.Column="0" 
+                       VerticalOptions="Center" 
+                       Margin="10"
+                       Text="HDL Colesterol (mg/dL)" />
+                <Entry Grid.Row="2" Grid.Column="1" x:Name="HDLCholesterolEntry" Keyboard="Numeric" Text="55" />
+                <Label Grid.Row="3" Grid.Column="0" 
+                       VerticalOptions="Center" 
+                       Margin="10"
+                       Text="Pressão arterial sistólica" />
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" Text="125" />
             </Grid>
             <!-- Section: Button -->
-            <Grid Margin="10, 5">
                 <VerticalStackLayout>
                     <BoxView Color="{StaticResource Secondary}"
                          CornerRadius="10"
@@ -141,12 +108,11 @@
                          VerticalOptions="Center"
                          HorizontalOptions="FillAndExpand" />
                     <Button Text="Calcular" BackgroundColor="Green" FontSize="16"
-                        Margin="0,5"
+                        Margin="10,20"
                         Clicked="Calcular_Clicked" 
-                        HorizontalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
                         VerticalOptions="Center" />
                 </VerticalStackLayout>
-            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
