@@ -64,7 +64,13 @@ Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-
 - 140-159: 3 points;
 - 160 or higher: 4 points.
 
-**Treated**: Under 120: 0 points. 120-129: 3 points. 130-139: 4 points. 140-159: 5 points. 160 or higher: 6 points.
+**Treated**: 
+
+- Under 120: 0 points;
+- 120-129: 3 points;
+- 130-139: 4 points;
+- 140-159: 5 points;
+- 160 or higher: 6 points.
 
 ### 10-year risk in %: 
 
@@ -165,4 +171,4 @@ Age 70–79 years: Under 160: 0 points. 160-199: 0 points. 200-239: 0 points. 24
 - 17 points or more: Over 30%.
 
 Further risk score profiles based on the Framingham Heart Study
->Not only coronary heart disease (CHD) events but also further risks can be predicted. Risk prediction models for cardiovascular disease outcomes other than CHD events have also been developed by the Framingham Heart Study researchers. Amongst others, a risk score for 10-year risk for atrial fibrillation has been developed.[25][26]
+>Not only coronary heart disease (CHD) events but also further risks can be predicted. Risk prediction models for cardiovascular disease outcomes other than CHD events have also been developed by the Framingham Heart Study researchers. Amongst others, a risk score for 10-year risk for atrial fibrillation has been developed.
