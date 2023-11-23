@@ -54,9 +54,36 @@ Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-
 - 40-49: 1 point;
 - Under 40: 2 points.
 
-#### Systolic blood pressure, mm Hg: Untreated: Under 120: 0 points. 120-129: 1 point. 130-139: 2 points. 140-159: 3 points. 160 or higher: 4 points. • Treated: Under 120: 0 points. 120-129: 3 points. 130-139: 4 points. 140-159: 5 points. 160 or higher: 6 points.
+#### Systolic blood pressure, mm Hg:
 
-**10-year risk in %: Points total: Under 9 points: <1%. 9-12 points: 1%. 13-14 points: 2%. 15 points: 3%. 16 points: 4%. 17 points: 5%. 18 points: 6%. 19 points: 8%. 20 points: 11%. 21=14%, 22=17%, 23=22%, 24=27%, >25= Over 30%**
+**Untreated**: 
+
+- Under 120: 0 points;
+- 120-129: 1 point;
+- 130-139: 2 points;
+- 140-159: 3 points;
+- 160 or higher: 4 points.
+
+**Treated**: Under 120: 0 points. 120-129: 3 points. 130-139: 4 points. 140-159: 5 points. 160 or higher: 6 points.
+
+### 10-year risk in %: 
+
+**Points total**: 
+
+- Under 9 points: <1%;
+- 9-12 points: 1%;
+- 13-14 points: 2%;
+- 15 points: 3%;
+- 16 points: 4%;
+- 17 points: 5%;
+- 18 points: 6%;
+- 19 points: 8%;
+- 20 points: 11%;
+- 21 points: 14%;
+- 22 points: 17%;
+- 23 points: 22%;
+- 24 points: 27%;
+- > 25 points: Over 30%.
 
 ### Framingham Risk Score for Men
 
