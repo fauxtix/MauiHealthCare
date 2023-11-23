@@ -83,7 +83,7 @@ Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-
 - 22 points: 17%;
 - 23 points: 22%;
 - 24 points: 27%;
-- > 25 points: Over 30%.
+- 25 points or more: Over 30%.
 
 ### Framingham Risk Score for Men
 
