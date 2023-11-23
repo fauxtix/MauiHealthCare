@@ -122,9 +122,30 @@ Age 70–79 years: Under 160: 0 points. 160-199: 0 points. 200-239: 0 points. 24
 - Age 70–79 years: 1 point.
 - All non smokers: 0 points.
 
-#### HDL cholesterol, mg/dL: 60 or higher: Minus 1 point. 50-59: 0 points. 40-49: 1 point. Under 40: 2 points.
+#### HDL cholesterol, mg/dL:
 
-#### Systolic blood pressure, mm Hg: Untreated: Under 120: 0 points. 120-129: 0 points. 130-139: 1 point. 140-159: 1 point. 160 or higher: 2 points. • Treated: Under 120: 0 points. 120-129: 1 point. 130-139: 2 points. 140-159: 2 points. 160 or higher: 3 points.
+- 60 or higher: Minus 1 point;
+- 50-59: 0 points;
+- 40-49: 1 point;
+- Under 40: 2 points.
+
+#### Systolic blood pressure, mm Hg: 
+
+**Untreated**:
+
+- Under 120: 0 points;
+- 120-129: 0 points;
+- 130-139: 1 point;
+- 140-159: 1 point;
+- 160 or higher: 2 points;
+
+**Treated**:
+
+- Under 120: 0 points;
+- 120-129: 1 point;
+- 130-139: 2 points;
+- 140-159: 2 points;
+- 160 or higher: 3 points.
 
 **10-year risk in %: Points total:**
 
