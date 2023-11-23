@@ -27,8 +27,14 @@ Age 60–69 years: Under 160: 0 points. 160-199: 1 point. 200-239: 2 points. 240
 
 Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-279: 2 points. 280 or higher: 2 points.
 
-#### If cigarette smoker: Age 20–39 years: 9 points. • Age 40–49 years: 7 points. • Age 50–59 years: 4 points. • Age 60–69 years: 2 points. • Age 70–79 years: 1 point.
-All non smokers: 0 points.
+#### If cigarette smoker: 
+
+- Age 20–39 years: 9 points. 
+- Age 40–49 years: 7 points. 
+- Age 50–59 years: 4 points. 
+- Age 60–69 years: 2 points. 
+- Age 70–79 years: 1 point.
+- All non smokers: 0 points.
 
 #### HDL cholesterol, mg/dL: 60 or higher: Minus 1 point. 50-59: 0 points. 40-49: 1 point. Under 40: 2 points.
 
