@@ -56,7 +56,7 @@ Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-
 
 #### Systolic blood pressure, mm Hg:
 
-**Untreated**: 
+##### **Untreated**: 
 
 - Under 120: 0 points;
 - 120-129: 1 point;
