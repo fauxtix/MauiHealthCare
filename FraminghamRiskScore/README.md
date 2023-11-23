@@ -9,11 +9,11 @@ The Framingham/ATP III criteria were used to estimate CHD risk in the USA. Data 
 
 >High risk was most commonly found in patients with advanced age and was more common in men than women.[medical citation needed]
 
-##Scoring
+## Scoring
 Framingham Risk Score for Women
 Age: 20–34 years: Minus 7 points. 35–39 years: Minus 3 points. 40–44 years: 0 points. 45–49 years: 3 points. 50–54 years: 6 points. 55–59 years: 8 points. 60–64 years: 10 points. 65–69 years: 12 points. 70–74 years: 14 points. 75–79 years: 16 points.
 
-#Total cholesterol, mg/dL:
+# Total cholesterol, mg/dL:
 
 Age 20–39 years: Under 160: 0 points. 160-199: 4 points. 200-239: 8 points. 240-279: 11 points. 280 or higher: 13 points.
 Age 40–49 years: Under 160: 0 points. 160-199: 3 points. 200-239: 6 points. 240-279: 8 points. 280 or higher: 10 points.
