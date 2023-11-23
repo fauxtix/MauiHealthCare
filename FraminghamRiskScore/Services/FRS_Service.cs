@@ -163,6 +163,7 @@ namespace FraminghamRiskScore.Services
                 _ => 0,
             };
         }
+
         public int GetHDLCholesterolPoints(Gender gender, int hdlCholesterol)
         {
             return gender switch
@@ -203,10 +204,10 @@ namespace FraminghamRiskScore.Services
             switch (gender)
             {
                 case Gender.Male:
-                    points = CalculatePointsForMale(systolicBloodPressure, isTreated);
+                    points = CalculateSystolicPointsForMale(systolicBloodPressure, isTreated);
                     break;
                 case Gender.Female:
-                    points = CalculatePointsForFemale(systolicBloodPressure, isTreated);
+                    points = CalculateSystolicPointsForFemale(systolicBloodPressure, isTreated);
                     break;
                 default:
                     points = 0;
@@ -216,7 +217,7 @@ namespace FraminghamRiskScore.Services
             return points;
         }
 
-        private int CalculatePointsForFemale(int systolicBloodPressure, bool isTreated)
+        private int CalculateSystolicPointsForFemale(int systolicBloodPressure, bool isTreated)
         {
             if (isTreated)
             {
@@ -244,7 +245,7 @@ namespace FraminghamRiskScore.Services
             }
         }
 
-        private int CalculatePointsForMale(int systolicBloodPressure, bool isTreated)
+        private int CalculateSystolicPointsForMale(int systolicBloodPressure, bool isTreated)
         {
             if (isTreated)
             {

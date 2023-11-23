@@ -32,17 +32,18 @@
 
             </Grid>
             <!-- Section: Idade -->
-            <Grid Margin="10, 5" ColumnDefinitions="220,50">
+            <Grid Margin="10, 5" ColumnDefinitions="220,50, *">
                 <Label Grid.Column="0" Text="Idade" Margin="10"
                        VerticalOptions="Center"/>
                 <Entry Grid.Column="1" x:Name="AgeEntry" 
                       VerticalOptions="Center" 
                       HorizontalOptions="Center"
                       Text="55"/>
+                <Label Grid.Row="2" Grid.Column="2" Text="entre 20 and 79" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
             </Grid>
 
             <!-- Section: Género e Fumador -->
-            <Grid Margin="10, 5" ColumnDefinitions="220, *">
+            <Grid Margin="10, 5" ColumnDefinitions="220, 100">
                 <!-- Género -->
                 <Label Text="Género"
                        Grid.Column="0"
@@ -82,22 +83,26 @@
             </Grid>
             <Grid Margin="10, 5"
                   RowDefinitions="Auto, Auto, Auto, Auto"
-                  ColumnDefinitions="220, 50">
+                  ColumnDefinitions="220, 50, *">
                 <Label Grid.Row="1" Grid.Column="0" 
                        VerticalOptions="Center" 
                        Margin="10"
                        Text="Colesterol Total (mg/dL)" />
                 <Entry Grid.Row="1" Grid.Column="1" x:Name="TotalCholesterolEntry" Keyboard="Numeric" Text="180" />
+                <Label Grid.Row="1"  Grid.Column="2" Text="&lt; 200" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
                 <Label Grid.Row="2" Grid.Column="0" 
                        VerticalOptions="Center" 
                        Margin="10"
                        Text="HDL Colesterol (mg/dL)" />
                 <Entry Grid.Row="2" Grid.Column="1" x:Name="HDLCholesterolEntry" Keyboard="Numeric" Text="55" />
+                <Label Grid.Row="2" Grid.Column="2" Text="&lt; 75" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
                 <Label Grid.Row="3" Grid.Column="0" 
                        VerticalOptions="Center" 
                        Margin="10"
                        Text="Pressão arterial sistólica" />
                 <Entry Grid.Row="3" Grid.Column="1" x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" Text="125" />
+                <Label Grid.Row="3" Grid.Column="2" Text="&lt; 120" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
+
             </Grid>
             <!-- Section: Button -->
                 <VerticalStackLayout>
