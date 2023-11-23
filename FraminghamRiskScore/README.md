@@ -5,11 +5,11 @@
 >Based on the Analysis of the US population with the Framingham/ATP III criteria
 The Framingham/ATP III criteria were used to estimate CHD risk in the USA. Data from 11,611 patients from a very large study, the NHANES III, were used. The patients were 20 to 79 years of age and had no self-reported CHD, stroke, peripheral arterial disease, or diabetes.
 
-The results: 82% of patients had low risk (10% or less CHD risk at 10 years). 16% had intermediate risk (10-20%). 3% had high risk (20% or more).[23]
+>The results: 82% of patients had low risk (10% or less CHD risk at 10 years). 16% had intermediate risk (10-20%). 3% had high risk (20% or more).[23]
 
-High risk was most commonly found in patients with advanced age and was more common in men than women.[medical citation needed]
+>High risk was most commonly found in patients with advanced age and was more common in men than women.[medical citation needed]
 
-Scoring
+>Scoring
 Framingham Risk Score for Women
 Age: 20–34 years: Minus 7 points. 35–39 years: Minus 3 points. 40–44 years: 0 points. 45–49 years: 3 points. 50–54 years: 6 points. 55–59 years: 8 points. 60–64 years: 10 points. 65–69 years: 12 points. 70–74 years: 14 points. 75–79 years: 16 points.
 
@@ -50,5 +50,5 @@ Systolic blood pressure, mm Hg: Untreated: Under 120: 0 points. 120-129: 0 point
 
 10-year risk in %: Points total: 0 point: <1%. 1-4 points: 1%. 5-6 points: 2%. 7 points: 3%. 8 points: 4%. 9 points: 5%. 10 points: 6%. 11 points: 8%. 12 points: 10%. 13 points: 12%. 14 points: 16%. 15 points: 20%. 16 points: 25%. 17 points or more: Over 30%.[24]
 
-Further risk score profiles based on the Framingham Heart Study
+>Further risk score profiles based on the Framingham Heart Study
 Not only coronary heart disease (CHD) events but also further risks can be predicted. Risk prediction models for cardiovascular disease outcomes other than CHD events have also been developed by the Framingham Heart Study researchers. Amongst others, a risk score for 10-year risk for atrial fibrillation has been developed.[25][26]
