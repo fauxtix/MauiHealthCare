@@ -2,6 +2,9 @@
 using MauiPreDiabetes.Pages;
 using Microsoft.Extensions.Logging;
 
+
+
+
 namespace MauiPreDiabetes
 {
     public static class MauiProgram
@@ -18,7 +21,7 @@ namespace MauiPreDiabetes
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             FormHandler.RemoveBorders();
             builder.Services.AddSingleton<PreDiabetesIntroPage>();

@@ -1,7 +1,7 @@
-﻿using FraminghamRiskScore.Pages;
-using Microsoft.Extensions.Logging;
-using FraminghamRiskScore.Handlers;
+﻿using CommunityToolkit.Maui;
+using FraminghamRiskScore.Pages;
 using FraminghamRiskScore.Services;
+using Microsoft.Extensions.Logging;
 
 
 namespace FraminghamRiskScore
@@ -11,16 +11,15 @@ namespace FraminghamRiskScore
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+            builder.UseMauiApp<App>().ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            })
+                .UseMauiCommunityToolkit();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             //FormHandler.RemoveBorders();
             builder.Services.AddSingleton<FraminghamIntroPage>();

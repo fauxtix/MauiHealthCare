@@ -1,4 +1,6 @@
+using FraminghamRiskScore.Formatters;
 using FraminghamRiskScore.Services;
+using System.Text;
 using static FraminghamRiskScore.Enums;
 
 namespace FraminghamRiskScore.Pages;
@@ -45,9 +47,19 @@ public partial class FraminghamRiskScorePage : ContentPage
 
     private void Calcular_Clicked(object sender, EventArgs e)
     {
-        // Set values for Age, Gender, IsSmoker, TotalCholesterol, HDLCholesterol, and SystolicBloodPressure
-        // based on your app's UI input. For example:
+        StringBuilder sb = new StringBuilder();
+        var output = ValidateEntries();
+        if (output.Count > 0)
+        {
+            foreach (var entry in output)
+            {
+                sb.AppendLine(entry);
+            }
 
+            Shell.Current.DisplayAlert("Validação", sb.ToString(), "Ok");
+            return;
+
+        }
         Age = int.Parse(AgeEntry.Text);
         IsSmoker = SmokerSwitch.IsToggled;
         TotalCholesterol = int.Parse(TotalCholesterolEntry.Text);
@@ -70,6 +82,64 @@ public partial class FraminghamRiskScorePage : ContentPage
         else return "Muito alto";
     }
 
+    private List<string> ValidateEntries()
+    {
+        bool entryOk = true;
+        var errorMessages = new List<string>();
+        if (string.IsNullOrEmpty(AgeEntry.Text))
+        {
+            errorMessages.Add("Preencha idade");
+            entryOk = false;
+        }
+        else if (string.IsNullOrEmpty(TotalCholesterolEntry.Text))
+        {
+            errorMessages.Add("Preencha Cloresterol Total");
+            entryOk = false;
+        }
+        else if (string.IsNullOrEmpty(HDLCholesterolEntry.Text))
+        {
+            errorMessages.Add("Preencha Cloresterol HDLl");
+            entryOk = false;
+        }
+
+        if (!DataFormat.IsNumeric(AgeEntry.Text))
+        {
+            errorMessages.Add("Idade não é um valor numérico");
+            entryOk = false;
+        }
+        if (!DataFormat.IsNumeric(TotalCholesterolEntry.Text))
+        {
+            errorMessages.Add("Colesterol total não é um valor numérico");
+            entryOk = false;
+        }
+        if (!DataFormat.IsNumeric(HDLCholesterolEntry.Text))
+        {
+            errorMessages.Add("Colesterol HDL não é um valor numérico");
+            entryOk = false;
+        }
+
+        if (entryOk)
+        {
+            int idade = int.Parse(AgeEntry.Text);
+            int cloresterolTotal = int.Parse(TotalCholesterolEntry.Text);
+            int cloresterolHDL = int.Parse(HDLCholesterolEntry.Text);
+
+            if (idade < 20 || idade > 79)
+            {
+                errorMessages.Add("idade entre 20 e 79 anos");
+            }
+            if (cloresterolTotal < 1)
+            {
+                errorMessages.Add("Cloresterol Total > 0");
+            }
+            if (cloresterolHDL < 1)
+            {
+                errorMessages.Add("Cloresterol HDL > 0");
+            }
+        }
+
+        return errorMessages;
+    }
 
     private void BllodPressureTreated_Toggled(object sender, ToggledEventArgs e)
     {

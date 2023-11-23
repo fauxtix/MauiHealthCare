@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FraminghamRiskScore.Pages.FraminghamRiskScorePage"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              BackgroundColor="#F4F5FA"
              Title="Framingham Risk Score">
 
@@ -9,7 +10,12 @@
         <ResourceDictionary>
             <Color x:Key="BorderColor1">Orange</Color>
             <Color x:Key="BorderColor2">Brown</Color>
-
+            <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+            <Style x:Key="ValidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
             <Style x:Key="CustomBorderStyle" TargetType="Border">
                 <Setter Property="StrokeThickness" Value="2" />
                 <Setter Property="StrokeShape" Value="RoundRectangle 2,0,0,2" />
@@ -38,7 +44,17 @@
                 <Entry Grid.Column="1" x:Name="AgeEntry" 
                       VerticalOptions="Center" 
                       HorizontalOptions="Center"
-                      Text="55"/>
+                      Text="55">
+                    <Entry.Behaviors>
+                        <mct:NumericValidationBehavior 
+                                            InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                            ValidStyle="{StaticResource ValidEntryStyle}"
+                                            Flags="ValidateOnValueChanged"
+                                            MinimumValue="20"
+                                            MaximumValue="79"
+                                            MaximumDecimalPlaces="0" />
+                    </Entry.Behaviors>
+                </Entry>
                 <Label Grid.Row="2" Grid.Column="2" Text="entre 20 and 79" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
             </Grid>
 
@@ -83,25 +99,55 @@
             </Grid>
             <Grid Margin="10, 5"
                   RowDefinitions="Auto, Auto, Auto, Auto"
-                  ColumnDefinitions="220, 50, *">
+                  ColumnDefinitions="220, 50">
                 <Label Grid.Row="1" Grid.Column="0" 
                        VerticalOptions="Center" 
                        Margin="10"
                        Text="Colesterol Total (mg/dL)" />
-                <Entry Grid.Row="1" Grid.Column="1" x:Name="TotalCholesterolEntry" Keyboard="Numeric" Text="180" />
-                <Label Grid.Row="1"  Grid.Column="2" Text="&lt; 200" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="TotalCholesterolEntry" Keyboard="Numeric" Text="180">
+                    <Entry.Behaviors>
+                        <mct:NumericValidationBehavior 
+                                            InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                            ValidStyle="{StaticResource ValidEntryStyle}"
+                                            Flags="ValidateOnValueChanged"
+                                            MinimumValue="160"
+                                            MaximumValue="280"
+                                            MaximumDecimalPlaces="0" />
+                    </Entry.Behaviors>
+                </Entry>
                 <Label Grid.Row="2" Grid.Column="0" 
                        VerticalOptions="Center" 
                        Margin="10"
                        Text="HDL Colesterol (mg/dL)" />
-                <Entry Grid.Row="2" Grid.Column="1" x:Name="HDLCholesterolEntry" Keyboard="Numeric" Text="55" />
-                <Label Grid.Row="2" Grid.Column="2" Text="&lt; 75" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
+                <Entry Grid.Row="2" Grid.Column="1" 
+                       x:Name="HDLCholesterolEntry" Keyboard="Numeric" Text="55">
+                    <Entry.Behaviors>
+                        <mct:NumericValidationBehavior 
+                                            InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                            ValidStyle="{StaticResource ValidEntryStyle}"
+                                            Flags="ValidateOnValueChanged"
+                                            MinimumValue="40"
+                                            MaximumValue="60"
+                                            MaximumDecimalPlaces="0" />
+                    </Entry.Behaviors>
+                </Entry>
                 <Label Grid.Row="3" Grid.Column="0" 
                        VerticalOptions="Center" 
                        Margin="10"
                        Text="Pressão arterial sistólica" />
-                <Entry Grid.Row="3" Grid.Column="1" x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" Text="125" />
-                <Label Grid.Row="3" Grid.Column="2" Text="&lt; 120" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
+                <Entry Grid.Row="3" Grid.Column="1" 
+                       x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" Text="125" >
+                    <Entry.Behaviors>
+                        <mct:NumericValidationBehavior 
+                                            InvalidStyle="{StaticResource InvalidEntryStyle}"
+                                            ValidStyle="{StaticResource ValidEntryStyle}"
+                                            Flags="ValidateOnValueChanged"
+                                            MinimumValue="100"
+                                            MaximumValue="139"
+                                            MaximumDecimalPlaces="0" />
+                    </Entry.Behaviors>
+
+                </Entry>
 
             </Grid>
             <!-- Section: Button -->
