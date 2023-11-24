@@ -2,11 +2,95 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FraminghamRiskScore.Pages.FraminghamIntroPage"
-             Title="FraminghamIntroPage">
+             Title="Framingham Risk Score">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BorderColor1">Orange</Color>
+            <Color x:Key="BorderColor2">Brown</Color>
+
+            <Style x:Key="CustomBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 20,0,0,20" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Background" Value="SteelBlue" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            <Border Style="{StaticResource CustomBorderStyle}" HorizontalOptions="Start" >
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="White" Offset="0.1" />
+                        <GradientStop Color="WhiteSmoke" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+
+                <Label Text="Introdução"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold" />
+            </Border>
+            <BoxView Grid.Row="0" Color="SteelBlue"
+                 CornerRadius="10"
+                 Margin="0,0, 0, 5"
+                 HeightRequest="3"
+                 VerticalOptions="Center"
+                 HorizontalOptions="FillAndExpand" />
+            <VerticalStackLayout>
+                <Grid Margin="20,5" RowDefinitions="Auto, Auto, Auto">
+                    <Label Grid.Row="0" Margin = "0, 5" FontAttributes="Italic" Text="(Wikipedia)"/>
+                    <Label Grid.Row="1" Text="A pontuação de risco de Framingham (Framingham Risk Score) é um algoritmo específico para cada sexo, utilizado para estimar o risco cardiovascular de um indivíduo a 10 anos."/>
+                    <Label  Margin = "0, 5" Grid.Row="2" Text="Esta pontuação foi inicialmente desenvolvida com base em dados obtidos no Framingham Heart Study, para estimar o risco a 10 anos de desenvolver doença coronária."/>
+                </Grid>
+            </VerticalStackLayout>
+            <BoxView Grid.Row="0" Color="SteelBlue"
+                     CornerRadius="10"
+                     Margin="0,2"
+                     HeightRequest="1"
+                     VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand" />
+
+            <TableView Intent="Menu">
+                <TableRoot>
+                    <TableSection Title="Modelo usado nesta simulação">
+                        <TextCell Text="1. Idade"
+                      Detail="- Entre 20 e 79 anos" />
+                        <TextCell Text="2. Género"
+                      Detail=""/>
+                        <TextCell Text="3. Hábito de fumar"
+                      Detail=""/>
+                        <TextCell Text="4. Medicação para a tensão arterial"
+                      Detail="" />
+                        <TextCell Text="5. Colesterol Total"
+                      Detail="" />
+                        <TextCell Text="6. Colesterol HDL"
+                      Detail="" />
+                        <TextCell Text="7. Tensão Arterial Sistólica"
+                      Detail="" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <VerticalStackLayout>
+                <Grid Margin="20,5" RowDefinitions="Auto, Auto, Auto">
+                    <Label  Grid.Row="0" Text="O risco de doença coronária (Coronary Heart Disease - CHD) aos 10 anos em percentagem pode ser calculado com a ajuda do Framingham Risk Score."/>
+                    <Label Margin="0, 10" Grid.Row="1" Text="Os indivíduos com risco baixo têm 10% ou menos de risco de CHD aos 10 anos, com risco intermédio 10-20% e com risco elevado 20% ou mais. No entanto, deve ter-se em conta que estas classificações são arbitrárias. "/>
+                    <Label Margin="0, 10" Grid.Row="2" Text="É importante reconhecer que o preditor mais forte de risco cardiovascular em qualquer equação de risco é a idade."/>
+                </Grid>
+            </VerticalStackLayout>
+            <BoxView Grid.Row="0" Color="SteelBlue"
+                     CornerRadius="10"
+                     Margin="0,10"
+                     HeightRequest="1"
+                     VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand" />
+
+            <FlexLayout JustifyContent="Center" Margin="0, 0, 0, 10">
+                    <Button x:Name="SimulationBtn" Text="Simulação" Clicked="SimulationBtn_Clicked" FontSize="18"></Button>
+                </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

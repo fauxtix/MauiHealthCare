@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FraminghamRiskScore.Pages.FraminghamResultsPage"
+             xmlns:vm="clr-namespace:FraminghamRiskScore.ViewModels"
+             xmlns:models="clr-namespace:FraminghamRiskScore.Models"
+             xmlns:conv="clr-namespace:FraminghamRiskScore.Converters"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="vm:FraminghamRiskScoreViewModel"
+             BackgroundColor="#F4F5FA"
+             Title="Resultado">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <conv:VisibilityConverter x:Key="VisibilityConverter"/>
+            <Style x:Key="NormalColorCellStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+            <Style x:Key="ResultColorCellStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
+
+            <Color x:Key="BorderColor1">Orange</Color>
+            <Color x:Key="BorderColor2">Brown</Color>
+            <Style x:Key="CustomBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 2,0,0,2" />
+                <Setter Property="Padding" Value="10,3" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Background" Value="#2B0B98" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout>
+            <BoxView Color="{StaticResource Secondary}"
+                         CornerRadius="10"
+                         Margin="0,10"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+            <Grid>
+                <Grid Margin="10,1" Padding="10,10" 
+                  RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, *"
+                  ColumnDefinitions="180, 70, *">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Idade"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Age}"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding  AgePoints}"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Fumador"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding  IsSmoker}"/>
+                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding  SmokerPoints}"/>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Clorestereol Total"/>
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding TotalCholesterol }"/>
+                    <Label Grid.Row="2" Grid.Column="2" Text="{Binding TotalCholesterolPoints }"/>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Clorestereol HDL"/>
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding HDLCholesterol}"/>
+                    <Label Grid.Row="3" Grid.Column="2" Text="{Binding HDLCholesterolPoints}"/>
+                    <Label Grid.Row="4" Grid.Column="0" Text="TA Sistólica"/>
+                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding SystolicBloodPressure}"/>
+                    <Label Grid.Row="4" Grid.Column="2" Text="{Binding SystolicBloodPressurePoints}"/>
+                    <BoxView Color="{StaticResource Secondary}"
+                         Grid.Row="5" Grid.ColumnSpan="3"
+                         CornerRadius="10"
+                         Margin="0,10"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Label Grid.Row="6" Grid.ColumnSpan="2" Text="Pontuação de Risco"/>
+                    <Label Grid.Row="6" Grid.Column="2" Text="{Binding RiskScore}"/>
+                    <Label Grid.Row="7" Grid.ColumnSpan="2" Text="Categoria de Risco"/>
+                    <Label Grid.Row="7" Grid.Column="2" Text="{Binding RiskCategory}" 
+                           FontAttributes="Bold" 
+                           TextColor="{Binding RiskColor}"/>
+                </Grid>
+            </Grid>
+            <BoxView Grid.Row="8" Color="{StaticResource Primary}"
+                             CornerRadius="10"
+                             HeightRequest="6"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+            <Grid Margin="10, 5" RowDefinitions="Auto, Auto, *">
+                <VerticalStackLayout>
+                    <BoxView Color="{StaticResource Primary}"
+                         Grid.Row="0"
+                         Margin="0, 10"
+                         CornerRadius="10"
+                         HeightRequest="1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+                    <Grid Grid.Row="1" IsVisible="{Binding IsMale}">
+                        <ListView RowHeight="26"
+                                  BackgroundColor="Transparent"
+                                  VerticalOptions="Center" VerticalScrollBarVisibility="Always"
+                                  SeparatorColor="Green"
+                                  ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type vm:FraminghamRiskScoreViewModel}}, Path=MaleScores}" x:DataType="models:Scores">
+                            <ListView.Header>
+                                <StackLayout BackgroundColor="SteelBlue">
+                                    <Label Margin="10,0,0,0" TextColor="White"
+                                           HorizontalOptions="Center" VerticalOptions="Center"
+                                           Padding="5, 10"
+                                           Text="Homens - Tabela de pontos e percentagem de risco"
+                                           FontSize="14"
+                                           FontAttributes="Bold" />
+                                </StackLayout>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Margin="20,0,0,0" Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                                            <Grid ColumnDefinitions="0.5*, 0.5*">
+                                                <Label Text="{Binding Points}" FontSize="14" Grid.Column="0"/>
+                                                <Label Text="{Binding Percentage}" FontSize="14" Grid.Column="1"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </Grid>
+                    <Grid IsVisible="{Binding IsFemale}" Grid.Row="1">
+                        <ListView RowHeight="26"
+                                  BackgroundColor="Transparent"
+                                  VerticalOptions="Center"
+                                  SeparatorColor="Green"
+                                  ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type vm:FraminghamRiskScoreViewModel}}, Path=FemaleScores}" x:DataType="models:Scores">
+                            <ListView.Header>
+                                <StackLayout BackgroundColor="SteelBlue" >
+                                    <Label Margin="10,0,0,0" TextColor="White"
+                                           HorizontalOptions="Center" VerticalOptions="Center"
+                                           Padding="5, 10"
+                                           Text="Mulheres - Tabela de pontos e percentagem de risco"
+                                           FontSize="14"
+                                           FontAttributes="Bold" />
+                                </StackLayout>
+                            </ListView.Header>
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Margin="20,0,0,0" Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                                            <Grid ColumnDefinitions="0.5*, 0.5*">
+                                                <Label Text="{Binding Points}" FontSize="14" Grid.Column="0"/>
+                                                <Label Text="{Binding Percentage}" FontSize="14" Grid.Column="1"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                    <BoxView Color="{StaticResource Primary}"
+                         Grid.Row="2"
+                         Margin="0, 10"
+                         CornerRadius="10"
+                         HeightRequest="1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

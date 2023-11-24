@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FraminghamRiskScore.Pages.FraminghamRiskScorePage"
              xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:FraminghamRiskScore.ViewModels"
+             xmlns:models="clr-namespace:FraminghamRiskScore.Models"
+             x:DataType="vm:FraminghamRiskScoreViewModel"
              BackgroundColor="#F4F5FA"
              Title="Framingham Risk Score">
 
@@ -42,9 +45,10 @@
                 <Label Grid.Column="0" Text="Idade" Margin="10"
                        VerticalOptions="Center"/>
                 <Entry Grid.Column="1" x:Name="AgeEntry" 
-                      VerticalOptions="Center" 
-                      HorizontalOptions="Center"
-                      Text="55">
+                       Keyboard="Numeric"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Text="{Binding Age}">
                     <Entry.Behaviors>
                         <mct:NumericValidationBehavior 
                                             InvalidStyle="{StaticResource InvalidEntryStyle}"
@@ -59,17 +63,17 @@
             </Grid>
 
             <!-- Section: Género e Fumador -->
-            <Grid Margin="10, 5" ColumnDefinitions="220, 100">
+            <Grid Margin="10, 5" ColumnDefinitions="220, *">
                 <!-- Género -->
                 <Label Text="Género"
                        Grid.Column="0"
                        Margin="10"/>
                 <Picker  x:Name="GenderPicker"
-                         Title="Escolha género"
+                         Title=" Selecione "
                          Margin="2,0"
                          VerticalOptions="Center"
                          HorizontalOptions="Start"
-                         Grid.Column="1"
+                         Grid.Column="1" 
                          CharacterSpacing="2"
                          BackgroundColor="LightGray"
                          SelectedIndexChanged="Gender_SelectedIndexChanged">
@@ -85,16 +89,17 @@
                 <!-- Fumador -->
                 <Label Text="Fumador" Margin="10"
                                Grid.Column="0"/>
-                <Switch x:Name="SmokerSwitch" Grid.Column="1" IsToggled="False" HorizontalOptions="Start" 
-                                VerticalOptions="Center" Toggled="SmokerSwitch_Toggled"/>
+                <Switch x:Name="SmokerSwitch" Grid.Column="1" 
+                        IsToggled="False" HorizontalOptions="Start" 
+                        VerticalOptions="Center" Toggled="SmokerSwitch_Toggled"/>
             </Grid>
             <Grid Margin="10, 5" ColumnDefinitions="220, *">
                 <Label Grid.Column="0" Margin="10" Text="Toma medicação para a TA?" />
                 <Switch Grid.Column="1"  
-                            x:Name="BllodPressureTreated" 
+                            x:Name="BloodPressureTreated" 
                             IsToggled="False" 
                             HorizontalOptions="Start"
-                            VerticalOptions="Center" 
+                            VerticalOptions="Center"                         
                             Toggled="BllodPressureTreated_Toggled" />
             </Grid>
             <Grid Margin="10, 5"
@@ -104,14 +109,15 @@
                        VerticalOptions="Center" 
                        Margin="10"
                        Text="Colesterol Total (mg/dL)" />
-                <Entry Grid.Row="1" Grid.Column="1" x:Name="TotalCholesterolEntry" Keyboard="Numeric" Text="180">
+                <Entry Grid.Row="1" Grid.Column="1" 
+                       x:Name="TotalCholesterolEntry" Keyboard="Numeric" Text="{Binding TotalCholesterol}">
                     <Entry.Behaviors>
                         <mct:NumericValidationBehavior 
                                             InvalidStyle="{StaticResource InvalidEntryStyle}"
                                             ValidStyle="{StaticResource ValidEntryStyle}"
                                             Flags="ValidateOnValueChanged"
-                                            MinimumValue="160"
-                                            MaximumValue="280"
+                                            MinimumValue="100"
+                                            MaximumValue="199"
                                             MaximumDecimalPlaces="0" />
                     </Entry.Behaviors>
                 </Entry>
@@ -120,14 +126,14 @@
                        Margin="10"
                        Text="HDL Colesterol (mg/dL)" />
                 <Entry Grid.Row="2" Grid.Column="1" 
-                       x:Name="HDLCholesterolEntry" Keyboard="Numeric" Text="55">
+                       x:Name="HDLCholesterolEntry" Keyboard="Numeric" Text="{Binding HDLCholesterol}">
                     <Entry.Behaviors>
                         <mct:NumericValidationBehavior 
                                             InvalidStyle="{StaticResource InvalidEntryStyle}"
                                             ValidStyle="{StaticResource ValidEntryStyle}"
                                             Flags="ValidateOnValueChanged"
                                             MinimumValue="40"
-                                            MaximumValue="60"
+                                            MaximumValue="129"
                                             MaximumDecimalPlaces="0" />
                     </Entry.Behaviors>
                 </Entry>
@@ -136,7 +142,7 @@
                        Margin="10"
                        Text="Pressão arterial sistólica" />
                 <Entry Grid.Row="3" Grid.Column="1" 
-                       x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" Text="125" >
+                       x:Name="SystolicBloodPressureEntry" Keyboard="Numeric" Text="{Binding SystolicBloodPressure}" >
                     <Entry.Behaviors>
                         <mct:NumericValidationBehavior 
                                             InvalidStyle="{StaticResource InvalidEntryStyle}"
@@ -151,19 +157,19 @@
 
             </Grid>
             <!-- Section: Button -->
-                <VerticalStackLayout>
-                    <BoxView Color="{StaticResource Secondary}"
+            <VerticalStackLayout>
+                <BoxView Color="{StaticResource Secondary}"
                          CornerRadius="10"
                          Margin="0,0"
                          HeightRequest="3"
                          VerticalOptions="Center"
                          HorizontalOptions="FillAndExpand" />
-                    <Button Text="Calcular" BackgroundColor="Green" FontSize="16"
+                <Button Text="Calcular" BackgroundColor="Green" FontSize="16"
                         Margin="10,20"
-                        Clicked="Calcular_Clicked" 
+                        Command="{Binding CalculateCommand}"                       
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Center" />
-                </VerticalStackLayout>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

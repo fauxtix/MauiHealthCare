@@ -137,7 +137,12 @@
                     </Label>
                     <Label Grid.Row="4" Padding="0, 10" Text="Lembre-se que o desenvolvimento de um modelo de avaliação de risco é um processo contínuo que pode beneficiar da colaboração com profissionais de saúde e do aperfeiçoamento contínuo com base nos últimos resultados da investigação!"/>
                 </Grid>
-                
+                <BoxView Grid.Row="0" Color="SteelBlue"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
                 <FlexLayout JustifyContent="Center">
                     <Button x:Name="SimulationBtn" Text="Simulação" Clicked="SimulationBtn_Clicked" FontSize="18"></Button>
                 </FlexLayout>

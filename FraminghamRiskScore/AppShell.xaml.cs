@@ -15,6 +15,7 @@ namespace FraminghamRiskScore
         {
             Routes.Add(nameof(FraminghamIntroPage), typeof(FraminghamIntroPage));
             Routes.Add(nameof(FraminghamRiskScorePage), typeof(FraminghamRiskScorePage));
+            Routes.Add(nameof(FraminghamResultsPage), typeof(FraminghamResultsPage));
             foreach (var item in Routes)
             {
                 Routing.RegisterRoute(item.Key, item.Value);

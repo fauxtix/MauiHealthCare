@@ -6,4 +6,10 @@ public partial class FraminghamIntroPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void SimulationBtn_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync($"{nameof(FraminghamRiskScorePage)}", true);
+    }
+
 }

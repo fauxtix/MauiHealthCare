@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using FraminghamRiskScore.Pages;
 using FraminghamRiskScore.Services;
+using FraminghamRiskScore.ViewModels;
 using Microsoft.Extensions.Logging;
 
 
@@ -23,8 +24,10 @@ namespace FraminghamRiskScore
 #endif
             //FormHandler.RemoveBorders();
             builder.Services.AddSingleton<FraminghamIntroPage>();
-            builder.Services.AddTransient<FraminghamRiskScorePage>();
+            builder.Services.AddSingleton<FraminghamRiskScorePage>();
+            builder.Services.AddTransient<FraminghamResultsPage>();
 
+            builder.Services.AddSingleton<FraminghamRiskScoreViewModel>();
             builder.Services.AddSingleton<IFRS_Service, FRS_Service>();
 
             return builder.Build();

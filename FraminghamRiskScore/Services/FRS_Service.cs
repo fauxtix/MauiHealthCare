@@ -247,6 +247,21 @@ namespace FraminghamRiskScore.Services
 
         private int CalculateSystolicPointsForMale(int systolicBloodPressure, bool isTreated)
         {
+            // Untreated:
+
+            // Under 120: 0 points.
+            // 120-129: 0 points.
+            // 130-139: 1 point.
+            // 140-159: 1 point.
+            // 160 or higher: 2 points.
+            //
+            // • Treated:
+            // Under 120: 0 points.
+            // 120-129: 1 point.
+            // 130-139: 2 points.
+            // 140-159: 2 points.
+            // 160 or higher: 3 points
+
             if (isTreated)
             {
                 return systolicBloodPressure switch
