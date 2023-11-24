@@ -53,15 +53,16 @@ These scores are not universally applicable, and their accuracy may vary in diff
 For the most up-to-date and context-specific risk assessment, it's advisable to refer to the guidelines and tools recommended by relevant health organizations in your region.
 
 ## Screenshots
+![SpashScreen](https://github.com/fauxtix/MauiHealthCare/assets/49880538/0d7bdad1-a0fb-4579-a2d5-18ba8825b34d)
+![Intro_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/2d2f9950-3cc6-4368-9c38-a4cbfe2d1c48)
+![Intro_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/b7a6ad39-63f1-479b-b2b9-11480afdb35f)
+![Simulador_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/9ae90e1e-b828-4147-ac12-322b62d74011)
+![Simulador_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/67b51a62-f73a-4002-9566-4e509e994993)
+![Simulador_3](https://github.com/fauxtix/MauiHealthCare/assets/49880538/46321308-a173-4776-af5e-37c649fd59a3)
+![Simulador_4](https://github.com/fauxtix/MauiHealthCare/assets/49880538/626e9833-f3a6-4cab-91cb-064916053121)
+![Simulador_Resultado](https://github.com/fauxtix/MauiHealthCare/assets/49880538/e6ecf90a-914f-42f5-84dd-c7fcbf117782)
 
-![SpashScreen](https://github.com/fauxtix/HealthCareSamples/assets/49880538/09e389d9-beeb-435e-92b6-657d56fd41c7)
-![Intro_1](https://github.com/fauxtix/HealthCareSamples/assets/49880538/5f2709a5-64ff-4c96-9ea2-d360bad48c9b)
-![Intro_2](https://github.com/fauxtix/HealthCareSamples/assets/49880538/f433da9e-f614-4829-a770-a9d8c11726f5)
-![Simulador_1](https://github.com/fauxtix/HealthCareSamples/assets/49880538/f3ae678b-9889-4ad1-ad03-e2a8705b4d05)
-![Simulador_2](https://github.com/fauxtix/HealthCareSamples/assets/49880538/42b76a44-0119-4e0d-8bf0-2bdb265c3221)
-![Simulador_3](https://github.com/fauxtix/HealthCareSamples/assets/49880538/fc20ffc1-f380-4658-9a32-1984c1391a60)
-![Simulador_4](https://github.com/fauxtix/HealthCareSamples/assets/49880538/d96a4bc2-2f4c-4b9a-b4f6-c9400cc91bb8)
-![Simulador_Resultado](https://github.com/fauxtix/HealthCareSamples/assets/49880538/9d4180b8-bb39-4317-8055-c4f266c0cd67)
+
 
 
 
