@@ -9,7 +9,7 @@
 ![Framingham_Input_woman_highrisk](https://github.com/fauxtix/MauiHealthCare/assets/49880538/1e6ea242-a7da-45ca-a02a-d6ffe1dad4aa)![FraminghamResult_VeryHigh](https://github.com/fauxtix/MauiHealthCare/assets/49880538/61b8a786-f6b2-4596-aadb-018d503deb3f)
 
 
-(Wikipedia)
+(Wikipedia) (https://en.wikipedia.org/wiki/Framingham_Risk_Score)
 
 
 >Based on the Analysis of the US population with the Framingham/ATP III criteria
