@@ -1,4 +1,6 @@
-## Risk for developing Diabetes 2 and Framingham Risk Score (10 years) prediction calculators
+## Risk for developing Diabetes 2
+## Framingham Risk Score (10 years)
+Estimate the 10-year cardiovascular risk of an individual.
 
 Please select **MauiPreDiabetes** / **FraminghamRiskScore** folder for more information and screenshots about the two apps.
 
