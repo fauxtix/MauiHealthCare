@@ -25,7 +25,7 @@ __Breaking down each factor__:
 
 **Group of Ages**: Age is a significant factor, and categorizing it into groups allows for a more nuanced assessment.
 
-**Smoking Habit**: Smoking has been associated with an increased risk of type 2 diabetes, so including this as a risk factor is appropriate.
+- **Smoking Habit**: Smoking has been associated with an increased risk of type 2 diabetes, so including this as a risk factor is appropriate.
 
 **Medicated for Blood Pressure**: Hypertension is a known risk factor for diabetes, and including whether someone is on medication for blood pressure is relevant.
 
