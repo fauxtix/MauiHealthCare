@@ -1,4 +1,4 @@
-# Diabetes 2 Prediction
+# Risk for developing Diabetes 2
 
 ## Screenshots
 
