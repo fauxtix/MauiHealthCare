@@ -2,4 +2,4 @@
 
 Please select **MauiPreDiabetes** / **FraminghamRiskScore** folder for more information and screenshots about the two apps.
 
-The folder **PreDiabetes** contains a Windows Forms project, created for quick test prototying of the **MauiPreDiabetes** mobile app.
+The folder **PreDiabetes** contains a Windows Forms project, created for a quick test prototyping of the **MauiPreDiabetes** mobile app.
