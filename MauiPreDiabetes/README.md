@@ -48,17 +48,20 @@ Here are a couple of well-known risk scores used in research and clinical practi
 >The FINDRISC is a widely used tool that originated in Finland. It includes questions about age, BMI, waist circumference, physical activity, dietary habits, history of elevated blood glucose, and family history of diabetes. Points are assigned to each answer, and the total score is used to categorize individuals into different risk groups.
 AUSDRISK (Australian Type 2 Diabetes Risk Assessment Tool):
 
->**AUSDRISK** is a tool developed in Australia to identify individuals at high risk of developing type 2 diabetes. It considers age, gender, family history, nationality, physical activity, dietary habits, and waist circumference. Similar to FINDRISC, it assigns points to each risk factor, and the total score helps determine the risk level.
+**AUSDRISK** 
+>is a tool developed in Australia to identify individuals at high risk of developing type 2 diabetes. It considers age, gender, family history, nationality, physical activity, dietary habits, and waist circumference. Similar to FINDRISC, it assigns points to each risk factor, and the total score helps determine the risk level.
 
 **IDRS** (Indian Diabetes Risk Score):
 
 >The IDRS is specifically designed for the Indian population. It includes age, waist circumference, physical activity, and family history. Points are assigned, and the total score is used to categorize individuals into different risk categories.
 QDiabetes Score:
 
->**QDiabetes** is a risk assessment tool used in the United Kingdom. It considers age, sex, BMI, smoking status, family history of diabetes, and socioeconomic status. Points are assigned to each factor, and the total score is used to estimate the 10-year risk of developing diabetes.
+**QDiabetes** 
+>is a risk assessment tool used in the United Kingdom. It considers age, sex, BMI, smoking status, family history of diabetes, and socioeconomic status. Points are assigned to each factor, and the total score is used to estimate the 10-year risk of developing diabetes.
 American Diabetes Association (ADA) Risk Test:
 
->**ADA** provides a simple online risk test that considers age, gender, family history, physical activity, and BMI to estimate the risk of developing type 2 diabetes.
+**ADA** 
+>provides a simple online risk test that considers age, gender, family history, physical activity, and BMI to estimate the risk of developing type 2 diabetes.
 These scores are not universally applicable, and their accuracy may vary in different populations. It's crucial to note that the interpretation of risk scores should be done in consultation with healthcare professionals, and individuals identified as high risk may be recommended for further diagnostic tests or preventive interventions.
 
 For the most up-to-date and context-specific risk assessment, it's advisable to refer to the guidelines and tools recommended by relevant health organizations in your region.
