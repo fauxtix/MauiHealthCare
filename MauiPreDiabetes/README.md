@@ -13,15 +13,15 @@
 
 ## Model used:
 
-1. Group of ages (in years) (less than 35, 35-44, 45-54, 55-64 and 65 or more), 
-2. Smoking habit,
-3. Medicated for blood pressure,
-4. Parents with type 2 diabetes, 
-5. Physical activity,
-6. Vegetables and fruits consumption,
-7. Waist circunference for woman and men
+1. Group of ages (in years) (less than 35, 35-44, 45-54, 55-64 and 65 or more); 
+2. Smoking habit;
+3. Medicated for blood pressure;
+4. Parents with type 2 diabetes; 
+5. Physical activity;
+6. Vegetables and fruits consumption;
+7. Waist circunference for woman and men.
 
-Breaking down each factor:
+### Breaking down each factor:
 
 **Group of Ages**: Age is a significant factor, and categorizing it into groups allows for a more nuanced assessment.
 
