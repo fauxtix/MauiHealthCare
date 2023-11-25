@@ -16,7 +16,7 @@ The Framingham/ATP III criteria were used to estimate CHD risk in the USA. Data 
 
 >The results: 82% of patients had low risk (10% or less CHD risk at 10 years). 16% had intermediate risk (10-20%). 3% had high risk (20% or more).
 
->High risk was most commonly found in patients with advanced age and was more common in men than women.[medical citation needed]
+>High risk was most commonly found in patients with advanced age and was more common in men than women.
 
 ## Scoring
 
