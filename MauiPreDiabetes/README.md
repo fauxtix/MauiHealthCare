@@ -21,7 +21,7 @@
 6. Vegetables and fruits consumption;
 7. Waist circunference for woman and men.
 
-#### Breaking down each factor:
+__Breaking down each factor__:
 
 **Group of Ages**: Age is a significant factor, and categorizing it into groups allows for a more nuanced assessment.
 
