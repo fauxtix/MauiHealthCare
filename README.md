@@ -1,4 +1,4 @@
-# Diabetes 2 and Framingham Risk Factor Simulator
+# Diabetes 2 Prediction
 
 Model used:
 
