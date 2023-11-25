@@ -155,7 +155,7 @@ Age 70–79 years: Under 160: 0 points. 160-199: 0 points. 200-239: 0 points. 24
 
 ### 10-year risk in %:
 
-** Points total**:
+**Points total**:
 
 - 0 point: <1%;
 - 1-4 points: 1%;
