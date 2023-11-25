@@ -23,19 +23,19 @@
 
 __Breaking down each factor__:
 
-**Group of Ages**: Age is a significant factor, and categorizing it into groups allows for a more nuanced assessment.
+- **Group of Ages**: Age is a significant factor, and categorizing it into groups allows for a more nuanced assessment.
 
 - **Smoking Habit**: Smoking has been associated with an increased risk of type 2 diabetes, so including this as a risk factor is appropriate.
 
-**Medicated for Blood Pressure**: Hypertension is a known risk factor for diabetes, and including whether someone is on medication for blood pressure is relevant.
+- **Medicated for Blood Pressure**: Hypertension is a known risk factor for diabetes, and including whether someone is on medication for blood pressure is relevant.
 
-**Parents with Diabetes**: Family history is a crucial factor in assessing genetic predisposition to diabetes.
+- **Parents with Diabetes**: Family history is a crucial factor in assessing genetic predisposition to diabetes.
 
-**Physical Activity**: Regular physical activity is associated with a lower risk of diabetes, so including this is important.
+- **Physical Activity**: Regular physical activity is associated with a lower risk of diabetes, so including this is important.
 
-**Vegetables and Fruits Consumption**: Dietary habits, including vegetable consumption, play a role in diabetes risk.
+- **Vegetables and Fruits Consumption**: Dietary habits, including vegetable consumption, play a role in diabetes risk.
 
-**Waist Circumference for Men and Women**: Abdominal obesity, as measured by waist circumference, is a well-established risk factor.
+- **Waist Circumference for Men and Women**: Abdominal obesity, as measured by waist circumference, is a well-established risk factor.
 
 Considering these factors provides a holistic view of an individual's risk for developing diabetes. However, the accuracy of the risk assessment will also depend on the weights assigned to each factor and the specific algorithm used to calculate the overall risk score.
 
