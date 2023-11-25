@@ -5,7 +5,8 @@
 ![Framingham_Intro_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/775efdfa-0f40-40ad-99f1-71cf68d879ef)
 ![Framingham_Intro_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/ce0dda26-44d3-4c34-b22d-44fe6a27fa73)
 ![Framingham_Input](https://github.com/fauxtix/MauiHealthCare/assets/49880538/5a2705e5-9351-43b1-ad23-679ec9baf177)
-![FraminghamResult](https://github.com/fauxtix/MauiHealthCare/assets/49880538/ce21505e-e1b5-4e72-adbd-44b59d31ce96)
+![FraminghamResult_Intermediary](https://github.com/fauxtix/MauiHealthCare/assets/49880538/f1542a50-f88a-4591-b74b-502e0f88b29d)
+![FraminghamResult_VeryHigh](https://github.com/fauxtix/MauiHealthCare/assets/49880538/aa3d37b0-6729-4905-952e-ec6c59c17e47)
 
 
 (Wikipedia)
