@@ -1,4 +1,4 @@
-## (Pre) Diabetes 2 and Framingham Risk Score (10 years) prediction calculators
+## Risk for developing Diabetes 2 and Framingham Risk Score (10 years) prediction calculators
 
 Please select **MauiPreDiabetes** / **FraminghamRiskScore** folder for more information and screenshots about the two apps.
 
