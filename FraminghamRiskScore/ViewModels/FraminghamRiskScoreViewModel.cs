@@ -115,8 +115,15 @@ public partial class FraminghamRiskScoreViewModel : ObservableObject
     [RelayCommand]
     async Task GoBack()
     {
-        await Shell.Current.GoToAsync($"//{nameof(FraminghamRiskScorePage)}");
+        await Shell.Current.GoToAsync($"{nameof(FraminghamRiskScorePage)}");
     }
+
+    [RelayCommand]
+    async Task GoHome()
+    {
+        await Shell.Current.GoToAsync($"//{nameof(FraminghamIntroPage)}");
+    }
+
 
     [RelayCommand]
     public void Calculate()
@@ -130,7 +137,7 @@ public partial class FraminghamRiskScoreViewModel : ObservableObject
                 sb.AppendLine(entry);
             }
 
-            Shell.Current.DisplayAlert("Validação", sb.ToString(), "Ok");
+            Shell.Current.DisplayAlert("Preencha dados requeridos, p.f.", sb.ToString(), "Ok");
             return;
         }
 

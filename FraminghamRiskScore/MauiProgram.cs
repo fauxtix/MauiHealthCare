@@ -25,7 +25,7 @@ namespace FraminghamRiskScore
             //FormHandler.RemoveBorders();
             builder.Services.AddSingleton<FraminghamIntroPage>();
             builder.Services.AddSingleton<FraminghamRiskScorePage>();
-            builder.Services.AddTransient<FraminghamResultsPage>();
+            builder.Services.AddSingleton<FraminghamResultsPage>();
 
             builder.Services.AddSingleton<FraminghamRiskScoreViewModel>();
             builder.Services.AddSingleton<IFRS_Service, FRS_Service>();

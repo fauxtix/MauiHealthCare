@@ -112,10 +112,10 @@ namespace FraminghamRiskScore.Services
             switch (gender)
             {
                 case Gender.Male:
-                    points = CalculateCholesterolPointsForMale(age, totalCholesterol);
+                    points = CalculateTotalCholesterolPointsForMale(age, totalCholesterol);
                     break;
                 case Gender.Female:
-                    points = CalculateCholesterolPointsForFemale(age, totalCholesterol);
+                    points = CalculateTotalCholesterolPointsForFemale(age, totalCholesterol);
                     break;
                 default:
                     points = 0;
@@ -125,7 +125,7 @@ namespace FraminghamRiskScore.Services
             return points;
         }
 
-        private int CalculateCholesterolPointsForFemale(int age, int totalCholesterol)
+        private int CalculateTotalCholesterolPointsForFemale(int age, int totalCholesterol)
         {
             return age switch
             {
@@ -138,7 +138,7 @@ namespace FraminghamRiskScore.Services
             };
         }
 
-        private int CalculateCholesterolPointsForMale(int age, int totalCholesterol)
+        private int CalculateTotalCholesterolPointsForMale(int age, int totalCholesterol)
         {
             return age switch
             {
@@ -251,15 +251,15 @@ namespace FraminghamRiskScore.Services
 
             // Under 120: 0 points.
             // 120-129: 0 points.
-            // 130-139: 1 point.
-            // 140-159: 1 point.
+            // 130-139: 1 point. ??
+            // 140-159: 1 point. ??
             // 160 or higher: 2 points.
             //
             // • Treated:
             // Under 120: 0 points.
             // 120-129: 1 point.
-            // 130-139: 2 points.
-            // 140-159: 2 points.
+            // 130-139: 2 points. ??
+            // 140-159: 2 points. ??
             // 160 or higher: 3 points
 
             if (isTreated)

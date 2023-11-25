@@ -69,7 +69,7 @@
                        Grid.Column="0"
                        Margin="10"/>
                 <Picker  x:Name="GenderPicker"
-                         Title=" Selecione "
+                         Title=" Selecione género "
                          Margin="2,0"
                          VerticalOptions="Center"
                          HorizontalOptions="Start"
@@ -167,6 +167,11 @@
                 <Button Text="Calcular" BackgroundColor="Green" FontSize="16"
                         Margin="10,20"
                         Command="{Binding CalculateCommand}"                       
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center" />
+                <Button Text="Intro" BackgroundColor="{StaticResource Primary}" FontSize="16"
+                        Margin="10,-10" TextColor="White" FontAttributes="Bold"
+                        Command="{Binding GoHomeCommand}"                       
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Center" />
             </VerticalStackLayout>

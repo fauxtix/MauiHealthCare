@@ -8,7 +8,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:FraminghamRiskScorePage}"
-        Route="FraminghamRiskScorePage" />
+        ContentTemplate="{DataTemplate local:FraminghamIntroPage}"
+        Route="FraminghamIntroPage" />
 
 </Shell>
