@@ -1,6 +1,16 @@
 # Framingham Risk Score (10 years)
 
+## Screenshots
+![Splashscreen](https://github.com/fauxtix/MauiHealthCare/assets/49880538/8f1b4f46-ee4e-478e-9cde-e8b3b55376e6)
+![Framingham_Intro_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/775efdfa-0f40-40ad-99f1-71cf68d879ef)
+![Framingham_Intro_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/ce0dda26-44d3-4c34-b22d-44fe6a27fa73)
+![Framingham_Input](https://github.com/fauxtix/MauiHealthCare/assets/49880538/5a2705e5-9351-43b1-ad23-679ec9baf177)
+![FraminghamResult_Intermediary](https://github.com/fauxtix/MauiHealthCare/assets/49880538/f1542a50-f88a-4591-b74b-502e0f88b29d)
+![Framingham_Input_woman_highrisk](https://github.com/fauxtix/MauiHealthCare/assets/49880538/1e6ea242-a7da-45ca-a02a-d6ffe1dad4aa)![FraminghamResult_VeryHigh](https://github.com/fauxtix/MauiHealthCare/assets/49880538/61b8a786-f6b2-4596-aadb-018d503deb3f)
+
+
 (Wikipedia)
+
 
 >Based on the Analysis of the US population with the Framingham/ATP III criteria
 The Framingham/ATP III criteria were used to estimate CHD risk in the USA. Data from 11,611 patients from a very large study, the NHANES III, were used. The patients were 20 to 79 years of age and had no self-reported CHD, stroke, peripheral arterial disease, or diabetes.
@@ -155,7 +165,7 @@ Age 70–79 years: Under 160: 0 points. 160-199: 0 points. 200-239: 0 points. 24
 
 ### 10-year risk in %:
 
-** Points total**:
+**Points total**:
 
 - 0 point: <1%;
 - 1-4 points: 1%;
