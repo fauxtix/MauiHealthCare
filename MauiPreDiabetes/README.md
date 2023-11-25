@@ -1,6 +1,17 @@
 # Diabetes 2 Prediction
 
-Model used:
+## Screenshots
+
+![SpashScreen](https://github.com/fauxtix/MauiHealthCare/assets/49880538/0d7bdad1-a0fb-4579-a2d5-18ba8825b34d)
+![Intro_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/2d2f9950-3cc6-4368-9c38-a4cbfe2d1c48)
+![Intro_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/b7a6ad39-63f1-479b-b2b9-11480afdb35f)
+![Simulador_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/9ae90e1e-b828-4147-ac12-322b62d74011)
+![Simulador_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/67b51a62-f73a-4002-9566-4e509e994993)
+![Simulador_3](https://github.com/fauxtix/MauiHealthCare/assets/49880538/46321308-a173-4776-af5e-37c649fd59a3)
+![Simulador_4](https://github.com/fauxtix/MauiHealthCare/assets/49880538/626e9833-f3a6-4cab-91cb-064916053121)
+![Simulador_Resultado](https://github.com/fauxtix/MauiHealthCare/assets/49880538/e6ecf90a-914f-42f5-84dd-c7fcbf117782)
+
+## Model used:
 
 1. Group of ages (in years) (less than 35, 35-44, 45-54, 55-64 and 65 or more), 
 2. Smoking habit,
@@ -52,13 +63,5 @@ These scores are not universally applicable, and their accuracy may vary in diff
 
 For the most up-to-date and context-specific risk assessment, it's advisable to refer to the guidelines and tools recommended by relevant health organizations in your region.
 
-## Screenshots
-![SpashScreen](https://github.com/fauxtix/MauiHealthCare/assets/49880538/0d7bdad1-a0fb-4579-a2d5-18ba8825b34d)
-![Intro_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/2d2f9950-3cc6-4368-9c38-a4cbfe2d1c48)
-![Intro_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/b7a6ad39-63f1-479b-b2b9-11480afdb35f)
-![Simulador_1](https://github.com/fauxtix/MauiHealthCare/assets/49880538/9ae90e1e-b828-4147-ac12-322b62d74011)
-![Simulador_2](https://github.com/fauxtix/MauiHealthCare/assets/49880538/67b51a62-f73a-4002-9566-4e509e994993)
-![Simulador_3](https://github.com/fauxtix/MauiHealthCare/assets/49880538/46321308-a173-4776-af5e-37c649fd59a3)
-![Simulador_4](https://github.com/fauxtix/MauiHealthCare/assets/49880538/626e9833-f3a6-4cab-91cb-064916053121)
-![Simulador_Resultado](https://github.com/fauxtix/MauiHealthCare/assets/49880538/e6ecf90a-914f-42f5-84dd-c7fcbf117782)
+
 
