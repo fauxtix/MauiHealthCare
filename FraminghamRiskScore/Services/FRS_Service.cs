@@ -112,10 +112,10 @@ namespace FraminghamRiskScore.Services
             switch (gender)
             {
                 case Gender.Male:
-                    points = CalculateTotalCholesterolPointsForMale(age, totalCholesterol);
+                    points = GetPointsForTotalCholesterolMale(age, totalCholesterol);
                     break;
                 case Gender.Female:
-                    points = CalculateTotalCholesterolPointsForFemale(age, totalCholesterol);
+                    points = GetPointsForTotalCholesterolFemale(age, totalCholesterol);
                     break;
                 default:
                     points = 0;
@@ -125,45 +125,131 @@ namespace FraminghamRiskScore.Services
             return points;
         }
 
-        private int CalculateTotalCholesterolPointsForFemale(int age, int totalCholesterol)
+
+        // Age 20–39 years: Under 160: 0 points. 160-199: 4 points. 200-239: 8 points. 240-279: 11 points. 280 or higher: 13 points.
+        //Age 40–49 years: Under 160: 0 points. 160-199: 3 points. 200-239: 6 points. 240-279: 8 points. 280 or higher: 10 points.
+        //Age 50–59 years: Under 160: 0 points. 160-199: 2 points. 200-239: 4 points. 240-279: 5 points. 280 or higher: 7 points.
+        //Age 60–69 years: Under 160: 0 points. 160-199: 1 point. 200-239: 2 points. 240-279: 3 points. 280 or higher: 4 points.
+        //Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-279: 2 points. 280 or higher: 2 points.
+
+        private int GetPointsForTotalCholesterolMale(int age, int totalCholesterol)
         {
-            return age switch
+            switch (age)
             {
-                _ when age >= 20 && age < 40 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 40 && age < 50 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 50 && age < 60 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 60 && age < 70 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 70 && age < 80 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ => 0,
-            };
+                case int n when (n >= 20 && n < 40):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 4;
+                        case int m when (m <= 239): return 7;
+                        case int m when (m <= 279): return 9;
+                        case int m when (m >= 280): return 11;
+                        default: return 0;
+                    }
+                case int n when (n >= 40 && n < 50):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 3;
+                        case int m when (m <= 239): return 5;
+                        case int m when (m <= 279): return 6;
+                        case int m when (m >= 280): return 8;
+                        default: return 0; 
+                    }
+                case int n when (n >= 50 && n < 60):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 2;
+                        case int m when (m <= 239): return 3;
+                        case int m when (m <= 279): return 4;
+                        case int m when (m >= 280): return 5;
+                        default: return 0; 
+                    }
+                case int n when (n >= 60 && n < 70):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 1;
+                        case int m when (m <= 239): return 1;
+                        case int m when (m <= 279): return 2;
+                        case int m when (m >= 280): return 3;
+                        default: return 0; 
+                    }
+                case int n when (n >= 70 && n < 80):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 0;
+                        case int m when (m <= 239): return 0;
+                        case int m when (m <= 279): return 1;
+                        case int m when (m >= 280): return 1;
+                        default: return 0; 
+                    }
+                default:
+                    return 0; 
+            }
         }
 
-        private int CalculateTotalCholesterolPointsForMale(int age, int totalCholesterol)
+        private int GetPointsForTotalCholesterolFemale(int age, int totalCholesterol)
         {
-            return age switch
+            switch (age)
             {
-                _ when age >= 20 && age < 40 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 40 && age < 50 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 50 && age < 60 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 60 && age < 70 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ when age >= 70 && age < 80 => CalculatePointsForTotalCholesterol(totalCholesterol, 160, 200, 240, 280),
-                _ => 0,
-            };
+                case int n when (n >= 20 && n < 40):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 4;
+                        case int m when (m <= 239): return 8;
+                        case int m when (m <= 279): return 11;
+                        case int m when (m >= 280): return 13;
+                        default: return 0; 
+                    }
+                case int n when (n >= 40 && n < 50):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 3;
+                        case int m when (m <= 239): return 6;
+                        case int m when (m <= 279): return 8;
+                        case int m when (m >= 280): return 10;
+                        default: return 0; 
+                    }
+                case int n when (n >= 50 && n < 60):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 2;
+                        case int m when (m <= 239): return 4;
+                        case int m when (m <= 279): return 5;
+                        case int m when (m >= 280): return 7;
+                        default: return 0; 
+                    }
+                case int n when (n >= 60 && n < 70):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160):
+                            return 0;
+                        case int m when (m <= 199): return 1;
+                        case int m when (m <= 239): return 2;
+                        case int m when (m <= 279): return 3;
+                        case int m when (m >= 280): return 4;
+                        default: return 0; 
+                    }
+                case int n when (n >= 70 && n < 80):
+                    switch (totalCholesterol)
+                    {
+                        case int m when (m < 160): return 0;
+                        case int m when (m <= 199): return 1;
+                        case int m when (m <= 239): return 1;
+                        case int m when (m <= 279): return 2;
+                        case int m when (m >= 280): return 2;
+                        default: return 0; 
+                    }
+                default:
+                    return 0; 
+            }
         }
-
-        private int CalculatePointsForTotalCholesterol(int totalCholesterol, int range1, int range2, int range3, int range4)
-        {
-            return totalCholesterol switch
-            {
-                _ when totalCholesterol < range1 => 0,
-                _ when totalCholesterol >= range1 && totalCholesterol < range2 => 4,
-                _ when totalCholesterol >= range2 && totalCholesterol < range3 => 8,
-                _ when totalCholesterol >= range3 && totalCholesterol < range4 => 11,
-                _ when totalCholesterol >= range4 => 13,
-                _ => 0,
-            };
-        }
-
         public int GetHDLCholesterolPoints(Gender gender, int hdlCholesterol)
         {
             return gender switch
