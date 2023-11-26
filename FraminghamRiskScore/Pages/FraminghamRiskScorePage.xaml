@@ -38,7 +38,6 @@
                          HeightRequest="3"
                          VerticalOptions="Center"
                          HorizontalOptions="FillAndExpand" />
-
             </Grid>
             <!-- Section: Idade -->
             <Grid Margin="10, 5" ColumnDefinitions="220,50, *">

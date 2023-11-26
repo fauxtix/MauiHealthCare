@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PreDiabetes", "PreDiabetes\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiPreDiabetes", "MauiPreDiabetes\MauiPreDiabetes.csproj", "{DD414E67-687E-47E9-9D4F-721EC08DDBEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraminghamRiskScore", "FraminghamRiskScore\FraminghamRiskScore.csproj", "{193AEE4F-E09A-4B45-8471-E784E5D15655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FraminghamRiskScore", "FraminghamRiskScore\FraminghamRiskScore.csproj", "{193AEE4F-E09A-4B45-8471-E784E5D15655}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardiovascularRiskAssessment", "CardiovascularRiskAssessment\CardiovascularRiskAssessment.csproj", "{B3B0AC11-B363-475F-8B60-A3A401E4D0C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,12 @@ Global
 		{193AEE4F-E09A-4B45-8471-E784E5D15655}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{193AEE4F-E09A-4B45-8471-E784E5D15655}.Release|Any CPU.Build.0 = Release|Any CPU
 		{193AEE4F-E09A-4B45-8471-E784E5D15655}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B3B0AC11-B363-475F-8B60-A3A401E4D0C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B0AC11-B363-475F-8B60-A3A401E4D0C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B0AC11-B363-475F-8B60-A3A401E4D0C2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B3B0AC11-B363-475F-8B60-A3A401E4D0C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B0AC11-B363-475F-8B60-A3A401E4D0C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B0AC11-B363-475F-8B60-A3A401E4D0C2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

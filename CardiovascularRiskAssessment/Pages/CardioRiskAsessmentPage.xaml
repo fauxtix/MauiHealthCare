@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CardiovascularRiskAssessment.Pages.CardioRiskAsessmentPage"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:CardiovascularRiskAssessment.ViewModels"
+             xmlns:models="clr-namespace:CardiovascularRiskAssessment.Models"
+             x:DataType="vm:CardiovascularRiskAssessmentViewModel"
+             BackgroundColor="#F4F5FA"
+             Title="Cardiovascular Risk Assessment">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BorderColor1">Orange</Color>
+            <Color x:Key="BorderColor2">Brown</Color>
+            <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+            <Style x:Key="ValidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
+            <Style x:Key="CustomBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 2,0,0,2" />
+                <Setter Property="Padding" Value="10,3" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Background" Value="#2B0B98" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid Margin="20" RowSpacing="5" ColumnSpacing="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" ColumnDefinitions="220,50, *">
+            <Label Grid.Column="0" Text="Idade" 
+                       VerticalOptions="Center"/>
+            <Entry Grid.Column="1" x:Name="AgeEntry" 
+                       Keyboard="Numeric"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Text="{Binding Age}">
+            </Entry>
+        </Grid>
+
+        <Grid Grid.Row="1" ColumnSpacing="25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Género" VerticalOptions="Center" HorizontalOptions="Start" />
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Spacing="3" HorizontalOptions="End">
+                <Button Text="Male" Clicked="OnMaleClicked" BackgroundColor="{StaticResource Blue100Accent}" />
+                <Button Text="Female" Clicked="OnFemaleClicked" BackgroundColor="{StaticResource  Cyan100Accent}"/>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Medicado para a Hipertensão" VerticalOptions="Center" HorizontalOptions="Start" />
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Spacing="3" HorizontalOptions="End">
+                <Button Text="Sim" Clicked="OnMaleClicked" BackgroundColor="{StaticResource  Primary}" />
+                <Button Text="Não" Clicked="OnFemaleClicked" BackgroundColor="{StaticResource BorderColor1}"/>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Diabetes" VerticalOptions="Center" Grid.Column="0" />
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Spacing="3"  HorizontalOptions="End">
+
+                <Button Text="Sim" Clicked="OnDiabetesYesClicked" Grid.Column="1" />
+                <Button Text="Não" Clicked="OnDiabetesNoClicked" Grid.Column="2" BackgroundColor="{StaticResource BorderColor1}"/>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Fumador" VerticalOptions="Center" HorizontalOptions="Start" />
+
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Spacing="3"  HorizontalOptions="End">
+                <Button Text="Sim" Clicked="OnSmokerYesClicked" />
+                <Button Text="Não" Clicked="OnSmokerNoClicked" BackgroundColor="{StaticResource BorderColor1}" />
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="5" ColumnDefinitions="220,50, *">
+            <Label Grid.Column="0" Text="Systolic Blood Pressure" 
+                       VerticalOptions="Center"/>
+            <Entry Grid.Column="1" x:Name="SystolicBloodPressureEntry" 
+                       Keyboard="Numeric"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Text="{Binding SystolicBloodPressure}">
+            </Entry>
+        </Grid>
+
+        <Grid Grid.Row="6" ColumnDefinitions="220,50, *">
+            <Label Grid.Column="0" Text="Total Cholesterol"
+                       VerticalOptions="Center"/>
+            <Entry Grid.Column="1" x:Name="TotalCholesterolEntry" 
+                       Keyboard="Numeric"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Text="{Binding SystolicBloodPressure}">
+            </Entry>
+        </Grid>
+
+        <Grid Grid.Row="7" ColumnDefinitions="220,50, *">
+            <Label Grid.Column="0" Text="HDL Cholesterol" 
+                       VerticalOptions="Center"/>
+            <Entry Grid.Column="1" x:Name="HDLCholesterolEntry" 
+                       Keyboard="Numeric"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Text="{Binding HDLCholesterol}">
+            </Entry>
+        </Grid>
+        <Grid Grid.Row="8" Margin="0, 10, 0, 0">
+            <BoxView Color="{StaticResource Secondary}"
+                         CornerRadius="10"
+                         Margin="0,0"
+                         HeightRequest="3"
+                         VerticalOptions="Center"
+                         HorizontalOptions="FillAndExpand" />
+        </Grid>
+
+
+        <Button Margin="0, 10" 
+                Text="Calculate Risk" 
+                Command="{Binding CalculateCRACommand}" 
+                Grid.Row="9" VerticalOptions="CenterAndExpand" />
+    </Grid></ContentPage>
