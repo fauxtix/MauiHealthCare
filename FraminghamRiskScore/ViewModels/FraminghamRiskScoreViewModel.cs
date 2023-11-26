@@ -53,59 +53,59 @@ public partial class FraminghamRiskScoreViewModel : ObservableObject
     [ObservableProperty]
     private Color riskColor;
 
-    public ObservableCollection<Scores> MaleScores { get; set; } = new();
-    public ObservableCollection<Scores> FemaleScores { get; set; } = new();
+    public ObservableCollection<Score> MaleScores { get; set; } = new();
+    public ObservableCollection<Score> FemaleScores { get; set; } = new();
 
     IFRS_Service _service;
     public FraminghamRiskScoreViewModel(IFRS_Service service)
     {
         _service = service;
 
-        MaleScores = new ObservableCollection<Scores>(ListOfMaleScores());
-        FemaleScores = new ObservableCollection<Scores>(ListOfFemaleScores());
+        MaleScores = new ObservableCollection<Score>(ListOfMaleScores());
+        FemaleScores = new ObservableCollection<Score>(ListOfFemaleScores());
     }
 
-    public List<Scores> ListOfFemaleScores()
+    public List<Score> ListOfFemaleScores()
     {
-        List<Scores> womanScores = new()
+        List<Score> womanScores = new()
         {
-            new Scores{ Points = "Abaixo de 9", Percentage = "< 1"},
-            new Scores{ Points = "9 - 12", Percentage = "1"},
-            new Scores{ Points = "13 - 14", Percentage = "2"},
-            new Scores{ Points = "15", Percentage = "3"},
-            new Scores{ Points = "16", Percentage = "4"},
-            new Scores{ Points = "17", Percentage = "5"},
-            new Scores{ Points = "18", Percentage = "6"},
-            new Scores{ Points = "19", Percentage = "8"},
-            new Scores{ Points = "20", Percentage = "11"},
-            new Scores{ Points = "21", Percentage = "14"},
-            new Scores{ Points = "22", Percentage = "17"},
-            new Scores{ Points = "23", Percentage = "22"},
-            new Scores{ Points = "24", Percentage = "27"},
-            new Scores{ Points = ">= 25", Percentage = "Mais de 30"},
+            new Score{ Points = "Abaixo de 9", Percentage = "< 1"},
+            new Score{ Points = "9 - 12", Percentage = "1"},
+            new Score{ Points = "13 - 14", Percentage = "2"},
+            new Score{ Points = "15", Percentage = "3"},
+            new Score{ Points = "16", Percentage = "4"},
+            new Score{ Points = "17", Percentage = "5"},
+            new Score{ Points = "18", Percentage = "6"},
+            new Score{ Points = "19", Percentage = "8"},
+            new Score{ Points = "20", Percentage = "11"},
+            new Score{ Points = "21", Percentage = "14"},
+            new Score{ Points = "22", Percentage = "17"},
+            new Score{ Points = "23", Percentage = "22"},
+            new Score{ Points = "24", Percentage = "27"},
+            new Score{ Points = ">= 25", Percentage = "Mais de 30"},
         };
 
         return womanScores;
     }
 
-    public List<Scores> ListOfMaleScores()
+    public List<Score> ListOfMaleScores()
     {
-        List<Scores> manScores = new()
+        List<Score> manScores = new()
         {
-            new Scores{ Points = "0", Percentage = "< 1"},
-            new Scores{ Points = "1 - 4", Percentage = "1"},
-            new Scores{ Points = "5 - 6", Percentage = "2"},
-            new Scores{ Points = "7", Percentage = "3"},
-            new Scores{ Points = "8", Percentage = "4"},
-            new Scores{ Points = "9", Percentage = "5"},
-            new Scores{ Points = "10", Percentage = "6"},
-            new Scores{ Points = "11", Percentage = "8"},
-            new Scores{ Points = "12", Percentage = "10"},
-            new Scores{ Points = "13", Percentage = "12"},
-            new Scores{ Points = "14", Percentage = "16"},
-            new Scores{ Points = "15", Percentage = "20"},
-            new Scores{ Points = "16", Percentage = "25"},
-            new Scores{ Points = ">= 17", Percentage = "Mais de 30"},
+            new Score{ Points = "0", Percentage = "< 1"},
+            new Score{ Points = "1 - 4", Percentage = "1"},
+            new Score{ Points = "5 - 6", Percentage = "2"},
+            new Score{ Points = "7", Percentage = "3"},
+            new Score{ Points = "8", Percentage = "4"},
+            new Score{ Points = "9", Percentage = "5"},
+            new Score{ Points = "10", Percentage = "6"},
+            new Score{ Points = "11", Percentage = "8"},
+            new Score{ Points = "12", Percentage = "10"},
+            new Score{ Points = "13", Percentage = "12"},
+            new Score{ Points = "14", Percentage = "16"},
+            new Score{ Points = "15", Percentage = "20"},
+            new Score{ Points = "16", Percentage = "25"},
+            new Score{ Points = ">= 17", Percentage = "Mais de 30"},
         };
 
         return manScores;

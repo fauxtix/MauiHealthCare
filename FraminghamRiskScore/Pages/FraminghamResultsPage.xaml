@@ -108,7 +108,7 @@
                                   BackgroundColor="Transparent"
                                   VerticalOptions="Center" VerticalScrollBarVisibility="Always"
                                   SeparatorColor="Green"
-                                  ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type vm:FraminghamRiskScoreViewModel}}, Path=MaleScores}" x:DataType="models:Scores">
+                                  ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type vm:FraminghamRiskScoreViewModel}}, Path=MaleScores}" x:DataType="models:Score">
                             <ListView.Header>
                                 <StackLayout BackgroundColor="SteelBlue">
                                     <Label Margin="10,0,0,0" TextColor="White"
@@ -139,7 +139,7 @@
                                   BackgroundColor="Transparent"
                                   VerticalOptions="Center"
                                   SeparatorColor="Green"
-                                  ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type vm:FraminghamRiskScoreViewModel}}, Path=FemaleScores}" x:DataType="models:Scores">
+                                  ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type vm:FraminghamRiskScoreViewModel}}, Path=FemaleScores}" x:DataType="models:Score">
                             <ListView.Header>
                                 <StackLayout BackgroundColor="SteelBlue" >
                                     <Label Margin="10,0,0,0" TextColor="White"
