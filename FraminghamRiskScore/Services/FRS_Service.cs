@@ -105,6 +105,27 @@ namespace FraminghamRiskScore.Services
                 _ => 0,
             };
         }
+
+
+
+        // Total cholesterol, mg/dL (Wikipedia)
+
+        /* Woman
+            Age 20–39 years: Under 160: 0 points. 160-199: 4 points. 200-239: 8 points. 240-279: 11 points. 280 or higher: 13 points.
+            Age 40–49 years: Under 160: 0 points. 160-199: 3 points. 200-239: 6 points. 240-279: 8 points. 280 or higher: 10 points.
+            Age 50–59 years: Under 160: 0 points. 160-199: 2 points. 200-239: 4 points. 240-279: 5 points. 280 or higher: 7 points.
+            Age 60–69 years: Under 160: 0 points. 160-199: 1 point. 200-239: 2 points. 240-279: 3 points. 280 or higher: 4 points.
+            Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-279: 2 points. 280 or higher: 2 points.
+         * */
+
+        /* Man
+            Age 20–39 years: Under 160: 0 points. 160-199: 4 points. 200-239: 7 points. 240-279: 9 points. 280 or higher: 11 points.
+            Age 40–49 years: Under 160: 0 points. 160-199: 3 points. 200-239: 5 points. 240-279: 6 points. 280 or higher: 8 points.
+            Age 50–59 years: Under 160: 0 points. 160-199: 2 points. 200-239: 3 points. 240-279: 4 points. 280 or higher: 5 points.
+            Age 60–69 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-279: 2 points. 280 or higher: 3 points.
+            Age 70–79 years: Under 160: 0 points. 160-199: 0 points. 200-239: 0 points. 240-279: 1 point. 280 or higher: 1 point.
+        */
+
         public int GetTotalCholesterolPoints(int age, Gender gender, int totalCholesterol)
         {
             int points;
@@ -124,13 +145,6 @@ namespace FraminghamRiskScore.Services
 
             return points;
         }
-
-
-        // Age 20–39 years: Under 160: 0 points. 160-199: 4 points. 200-239: 8 points. 240-279: 11 points. 280 or higher: 13 points.
-        //Age 40–49 years: Under 160: 0 points. 160-199: 3 points. 200-239: 6 points. 240-279: 8 points. 280 or higher: 10 points.
-        //Age 50–59 years: Under 160: 0 points. 160-199: 2 points. 200-239: 4 points. 240-279: 5 points. 280 or higher: 7 points.
-        //Age 60–69 years: Under 160: 0 points. 160-199: 1 point. 200-239: 2 points. 240-279: 3 points. 280 or higher: 4 points.
-        //Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-279: 2 points. 280 or higher: 2 points.
 
         private int GetPointsForTotalCholesterolMale(int age, int totalCholesterol)
         {
