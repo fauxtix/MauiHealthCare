@@ -9,15 +9,14 @@
 ![Framingham_Input_woman_highrisk](https://github.com/fauxtix/MauiHealthCare/assets/49880538/1e6ea242-a7da-45ca-a02a-d6ffe1dad4aa)![FraminghamResult_VeryHigh](https://github.com/fauxtix/MauiHealthCare/assets/49880538/61b8a786-f6b2-4596-aadb-018d503deb3f)
 
 
-(Wikipedia)
-
+The development of this app was based on a Wikipedia article (https://en.wikipedia.org/wiki/Framingham_Risk_Score), as described below:
 
 >Based on the Analysis of the US population with the Framingham/ATP III criteria
 The Framingham/ATP III criteria were used to estimate CHD risk in the USA. Data from 11,611 patients from a very large study, the NHANES III, were used. The patients were 20 to 79 years of age and had no self-reported CHD, stroke, peripheral arterial disease, or diabetes.
 
 >The results: 82% of patients had low risk (10% or less CHD risk at 10 years). 16% had intermediate risk (10-20%). 3% had high risk (20% or more).
 
->High risk was most commonly found in patients with advanced age and was more common in men than women.[medical citation needed]
+>High risk was most commonly found in patients with advanced age and was more common in men than women.
 
 ## Scoring
 

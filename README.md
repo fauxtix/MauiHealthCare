@@ -1,3 +1,9 @@
-## Diabetes 2 and Framingham Risk Score (10 years) prediction calculators
+Continuing my learning with .Net NAUI, I've created two apps for the healthcare area.
 
-Please select MauiPreDiabetes / FraminghamRiskScore folder for more information and screenshots of the apps.
+- **Risk for developing Diabetes 2**
+
+- **Framingham Risk Score (10 years)** - Estimate the 10-year cardiovascular risk of an individual.
+
+>Please select **MauiPreDiabetes** / **FraminghamRiskScore** folder for more information and screenshots about the two apps.
+
+>The folder **PreDiabetes** contains a Windows Forms project, created for a quick test prototyping of the **MauiPreDiabetes** mobile app.
