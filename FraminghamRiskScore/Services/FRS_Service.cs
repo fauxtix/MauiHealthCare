@@ -237,9 +237,9 @@ namespace FraminghamRiskScore.Services
                 {
                     _ when systolicBloodPressure < 120 => 0,
                     _ when systolicBloodPressure >= 120 && systolicBloodPressure < 130 => 1,
-                    _ when systolicBloodPressure >= 130 && systolicBloodPressure < 140 => 1,
-                    _ when systolicBloodPressure >= 140 && systolicBloodPressure < 160 => 2,
-                    _ when systolicBloodPressure >= 160 => 3,
+                    _ when systolicBloodPressure >= 130 && systolicBloodPressure < 140 => 2,
+                    _ when systolicBloodPressure >= 140 && systolicBloodPressure < 160 => 3,
+                    _ when systolicBloodPressure >= 160 => 4,
                     _ => 0,
                 };
             }
