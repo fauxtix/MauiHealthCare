@@ -13,7 +13,7 @@ namespace FraminghamRiskScore.ViewModels;
 public partial class FraminghamRiskScoreViewModel : ObservableObject
 {
     [ObservableProperty]
-    FraminghamModel _model;
+    FraminghamModel _modell;
 
     [ObservableProperty]
     private int age = 0;
