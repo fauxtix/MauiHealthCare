@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CardiovascularRiskAssessment.Pages.CardioRiskAsessmentPage"
-             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:vm="clr-namespace:CardiovascularRiskAssessment.ViewModels"
              xmlns:models="clr-namespace:CardiovascularRiskAssessment.Models"
              x:DataType="vm:CardiovascularRiskAssessmentViewModel"
@@ -11,6 +11,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="BoolNegationConverter" />
             <Color x:Key="BorderColor1">Orange</Color>
             <Color x:Key="BorderColor2">Brown</Color>
             <Style x:Key="InvalidEntryStyle" TargetType="Entry">
@@ -32,6 +33,7 @@
 
     <Grid Margin="20" RowSpacing="5" ColumnSpacing="5">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -76,8 +78,8 @@
 
             <Label Text="Medicado para a Hipertensão" VerticalOptions="Center" HorizontalOptions="Start" />
             <StackLayout Orientation="Horizontal" Grid.Column="1" Spacing="3" HorizontalOptions="End">
-                <Button Text="Sim" Clicked="OnMaleClicked" BackgroundColor="{StaticResource  Primary}" />
-                <Button Text="Não" Clicked="OnFemaleClicked" BackgroundColor="{StaticResource BorderColor1}"/>
+                <Button Text="Sim" Clicked="OnHipertensionMedicatedYesClicked" BackgroundColor="{StaticResource  Primary}" />
+                <Button Text="Não" Clicked="OnHipertensionMedicatedNoClicked" BackgroundColor="{StaticResource BorderColor1}"/>
             </StackLayout>
         </Grid>
 
@@ -109,7 +111,17 @@
             </StackLayout>
         </Grid>
 
-        <Grid Grid.Row="5" ColumnDefinitions="220,50, *">
+        <Grid Grid.Row="5" Margin="10, 5" ColumnDefinitions="220, *">
+            <!-- Race -->
+            <Label Text="Caucasian?" Margin="10"
+                               Grid.Column="0"/>
+            <Switch x:Name="CaucasianSwitch" Grid.Column="1" 
+                    HorizontalOptions="Start" 
+                     IsToggled="{Binding Caucasian}"
+                    VerticalOptions="Center" Toggled="CaucasianSwitch_Toggled"/>
+        </Grid>
+
+        <Grid Grid.Row="6" ColumnDefinitions="220,50, *">
             <Label Grid.Column="0" Text="Systolic Blood Pressure" 
                        VerticalOptions="Center"/>
             <Entry Grid.Column="1" x:Name="SystolicBloodPressureEntry" 
@@ -120,18 +132,18 @@
             </Entry>
         </Grid>
 
-        <Grid Grid.Row="6" ColumnDefinitions="220,50, *">
+        <Grid Grid.Row="7" ColumnDefinitions="220,50, *">
             <Label Grid.Column="0" Text="Total Cholesterol"
                        VerticalOptions="Center"/>
             <Entry Grid.Column="1" x:Name="TotalCholesterolEntry" 
                        Keyboard="Numeric"
                        VerticalOptions="Center" 
                        HorizontalOptions="Center"
-                       Text="{Binding SystolicBloodPressure}">
+                       Text="{Binding TotalCholesterol}">
             </Entry>
         </Grid>
 
-        <Grid Grid.Row="7" ColumnDefinitions="220,50, *">
+        <Grid Grid.Row="8" ColumnDefinitions="220,50, *">
             <Label Grid.Column="0" Text="HDL Cholesterol" 
                        VerticalOptions="Center"/>
             <Entry Grid.Column="1" x:Name="HDLCholesterolEntry" 
@@ -141,7 +153,7 @@
                        Text="{Binding HDLCholesterol}">
             </Entry>
         </Grid>
-        <Grid Grid.Row="8" Margin="0, 10, 0, 0">
+        <Grid Grid.Row="9" Margin="0, 10, 0, 0">
             <BoxView Color="{StaticResource Secondary}"
                          CornerRadius="10"
                          Margin="0,0"
@@ -155,4 +167,5 @@
                 Text="Calculate Risk" 
                 Command="{Binding CalculateCRACommand}" 
                 Grid.Row="9" VerticalOptions="CenterAndExpand" />
-    </Grid></ContentPage>
+    </Grid>
+</ContentPage>

@@ -9,6 +9,7 @@ public class CardiovascularRiskAssessmentModel
     public int OnHypertensionMed { get; set; }
     public int Diabetes { get; set; }
     public int Smoker { get; set; }
+    public int Caucasian { get; set; }
     public double TotalCholesterol { get; set; }
     public double HDLCholesterol { get; set; }
 }

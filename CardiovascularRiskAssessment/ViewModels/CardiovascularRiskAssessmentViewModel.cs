@@ -25,14 +25,21 @@ public partial class CardiovascularRiskAssessmentViewModel : ObservableObject
     private double _totalCholesterol;
     [ObservableProperty]
     private double _hDLCholesterol;
+    [ObservableProperty]
+    private int _caucasian;
+
+    [ObservableProperty]
+    private bool hasValidationErrors;
 
     [ObservableProperty]
     CardiovascularRiskAssessmentModel cardioVascularRiskAssessmentModel;
 
-    ICRA_Service _service;
-    public CardiovascularRiskAssessmentViewModel(ICRA_Service service)
+    private readonly ICRA_Service _service;
+    private readonly IInputValidationService _validationService;
+    public CardiovascularRiskAssessmentViewModel(ICRA_Service service, IInputValidationService validationService)
     {
         _service = service;
+        _validationService = validationService;
     }
 
     [RelayCommand]
@@ -40,7 +47,7 @@ public partial class CardiovascularRiskAssessmentViewModel : ObservableObject
     {
         var result = _service.Calculate10YearRisk(Age,
                                                   Sex,
-                                                  1, // race removed, only difference if 'Black or African American'
+                                                  Caucasian,
                                                   SystolicBloodPressure,
                                                   OnHypertensionMed,
                                                   Diabetes,
