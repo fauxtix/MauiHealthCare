@@ -58,7 +58,23 @@
             </Entry>
         </Grid>
 
-        <Grid Grid.Row="1" ColumnSpacing="25">
+        <Grid Row="1" ColumnSpacing="25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Género" VerticalOptions="Center" HorizontalOptions="Start" />
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Spacing="3" HorizontalOptions="End">
+                <Frame HasShadow="False" Padding="5" BackgroundColor="{Binding GenderBackgroundColorMale, Source={x:Reference CardioRiskAsessmentPage}}" CornerRadius="5">
+                    <Button x:Name="MaleButton" Text="Male" Clicked="OnMaleClicked" BackgroundColor="Blue" />
+                </Frame>
+                <Frame x:Name="FemaleButton" HasShadow="False" Padding="5" BackgroundColor="{Binding GenderBackgroundColorFemale, Source={x:Reference CardioRiskAsessmentPage}}" CornerRadius="5">
+                    <Button Text="Female" Clicked="OnFemaleClicked" BackgroundColor="Cyan" />
+                </Frame>
+            </StackLayout>
+        </Grid>
+        <!--<Grid Grid.Row="1" ColumnSpacing="25">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -69,8 +85,17 @@
                 <Button Text="Male" Clicked="OnMaleClicked" BackgroundColor="{StaticResource Blue100Accent}" />
                 <Button Text="Female" Clicked="OnFemaleClicked" BackgroundColor="{StaticResource  Cyan100Accent}"/>
             </StackLayout>
+        </Grid>-->
+
+        <Grid Grid.Row="2" Margin="10, 5" ColumnDefinitions="220, *">
+            <!-- On Hypertension Medicated -->
+            <Label Text="On Hypertension Medicated?" Margin="10" Grid.Column="0"/>
+            <Switch x:Name="OnHypertensionMedSwitch" Grid.Column="1" 
+            HorizontalOptions="Start" 
+            IsToggled="{Binding OnHypertensionMed}"
+            VerticalOptions="Center" Toggled="OnHypertensionMedSwitch_Toggled"/>
         </Grid>
-        <Grid Grid.Row="2">
+        <!--<Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -81,9 +106,18 @@
                 <Button Text="Sim" Clicked="OnHipertensionMedicatedYesClicked" BackgroundColor="{StaticResource  Primary}" />
                 <Button Text="Não" Clicked="OnHipertensionMedicatedNoClicked" BackgroundColor="{StaticResource BorderColor1}"/>
             </StackLayout>
-        </Grid>
+        </Grid>-->
 
-        <Grid Grid.Row="3">
+
+        <Grid Grid.Row="3" Margin="10, 5" ColumnDefinitions="220, *">
+            <!-- Diabetes -->
+            <Label Text="Diabetes?" Margin="10" Grid.Column="0"/>
+            <Switch x:Name="DiabetesSwitch" Grid.Column="1" 
+            HorizontalOptions="Start" 
+            IsToggled="{Binding Diabetes}"
+            VerticalOptions="Center" Toggled="DiabetesSwitch_Toggled"/>
+        </Grid>
+        <!--<Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
@@ -96,19 +130,15 @@
                 <Button Text="Sim" Clicked="OnDiabetesYesClicked" Grid.Column="1" />
                 <Button Text="Não" Clicked="OnDiabetesNoClicked" Grid.Column="2" BackgroundColor="{StaticResource BorderColor1}"/>
             </StackLayout>
-        </Grid>
-        <Grid Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        </Grid>-->
 
-            <Label Text="Fumador" VerticalOptions="Center" HorizontalOptions="Start" />
-
-            <StackLayout Orientation="Horizontal" Grid.Column="1" Spacing="3"  HorizontalOptions="End">
-                <Button Text="Sim" Clicked="OnSmokerYesClicked" />
-                <Button Text="Não" Clicked="OnSmokerNoClicked" BackgroundColor="{StaticResource BorderColor1}" />
-            </StackLayout>
+        <Grid Grid.Row="4" Margin="10, 5" ColumnDefinitions="220, *">
+            <!-- Smoker -->
+            <Label Text="Smoker?" Margin="10" Grid.Column="0"/>
+            <Switch x:Name="SmokerSwitch" Grid.Column="1" 
+            HorizontalOptions="Start" 
+            IsToggled="{Binding Smoker}"
+            VerticalOptions="Center" Toggled="SmokerSwitch_Toggled"/>
         </Grid>
 
         <Grid Grid.Row="5" Margin="10, 5" ColumnDefinitions="220, *">

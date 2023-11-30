@@ -64,17 +64,28 @@ namespace CardiovascularRiskAssessment.Services
         // Additional validation methods for other input fields...
 
         // You can also add a method to perform overall validation, if needed.
-        public bool ValidateAll(string age, string systolicBP, string totalCholesterol, string hdlCholesterol)
+        public List<ValidationResult> ValidateAll(string age, string systolicBP, string totalCholesterol, string hdlCholesterol)
         {
+            List<ValidationResult> listOfErrors = new();
             // Perform validation for all input fields
             ValidationResult ageValidation = ValidateAge(age);
+            if (ageValidation.IsValid == false || ageValidation.IsWarning == true)
+                listOfErrors.Add(ageValidation);
             ValidationResult systolicBPValidation = ValidateSystolicBloodPressure(systolicBP);
+            if (systolicBPValidation.IsValid == false || systolicBPValidation.IsWarning == true)
+                listOfErrors.Add(systolicBPValidation);
             ValidationResult totalCholesterolValidation = ValidateTotalCholesterol(totalCholesterol);
-            ValidationResult hdlCholesterolValidation = ValidateHDLCholesterol(hdlCholesterol);
+            if (totalCholesterolValidation.IsValid == false || totalCholesterolValidation.IsWarning == true)
+                listOfErrors.Add(totalCholesterolValidation);
 
+            ValidationResult hdlCholesterolValidation = ValidateHDLCholesterol(hdlCholesterol);
+            if (hdlCholesterolValidation.IsValid == false || hdlCholesterolValidation.IsWarning == true)
+                listOfErrors.Add(hdlCholesterolValidation);
+
+            return listOfErrors ?? new List<ValidationResult>();
             // Check if any validation failed
-            return ageValidation.IsValid && systolicBPValidation.IsValid &&
-                   totalCholesterolValidation.IsValid && hdlCholesterolValidation.IsValid;
+            //return ageValidation.IsValid && systolicBPValidation.IsValid &&
+            //       totalCholesterolValidation.IsValid && hdlCholesterolValidation.IsValid;
         }
     }
 }

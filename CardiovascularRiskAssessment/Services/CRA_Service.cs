@@ -69,6 +69,7 @@ public class CRA_Service : ICRA_Service
     private const double C_Diabetes_White_Male = 0.658;
     private const double S10_White_Male = 0.9144;
     private const double Mean_Terms_White_Male = 61.18;
+
     public double Calculate10YearRisk(int age, int sex, int race, double systolicBloodPressure, int onHypertensionMed, int diabetes, int smoker, double totalCholesterol, double hdlCholesterol)
     {
         double logit = CalculateRiskInternal(age, sex, race, systolicBloodPressure, onHypertensionMed, diabetes, smoker, totalCholesterol, hdlCholesterol);
@@ -89,8 +90,8 @@ public class CRA_Service : ICRA_Service
                     (C_Age_HDL_Chol_Black_Male * Math.Log(age) * Math.Log(hdlCholesterol)) +
                     (onHypertensionMed * C_On_Hypertension_Meds_Black_Male * Math.Log(systolicBloodPressure)) +
                     (onHypertensionMed * C_Age_On_Hypertension_Meds_Black_Male * Math.Log(age) * Math.Log(systolicBloodPressure)) +
-                    (onHypertensionMed == 0 ? C_Off_Hypertension_Meds_Black_Male * Math.Log(systolicBloodPressure) : 0) +
-                    (onHypertensionMed == 0 ? C_Age_Off_Hypertension_Meds_Black_Male * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Off_Hypertension_Meds_Black_Male * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Age_Off_Hypertension_Meds_Black_Male * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
                     (smoker * C_Smoker_Black_Male * smoker) +
                     (smoker * C_Age_Smoker_Black_Male * Math.Log(age) * smoker) +
                     (diabetes * C_Diabetes_Black_Male * diabetes);
@@ -106,8 +107,8 @@ public class CRA_Service : ICRA_Service
                     (C_Age_HDL_Chol_Black_Female * Math.Log(age) * Math.Log(hdlCholesterol)) +
                     (onHypertensionMed * C_On_Hypertension_Meds_Black_Female * Math.Log(systolicBloodPressure)) +
                     (onHypertensionMed * C_Age_On_Hypertension_Meds_Black_Female * Math.Log(age) * Math.Log(systolicBloodPressure)) +
-                    (onHypertensionMed == 0 ? C_Off_Hypertension_Meds_Black_Female * Math.Log(systolicBloodPressure) : 0) +
-                    (onHypertensionMed == 0 ? C_Age_Off_Hypertension_Meds_Black_Female * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Off_Hypertension_Meds_Black_Female * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Age_Off_Hypertension_Meds_Black_Female * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
                     (smoker * C_Smoker_Black_Female * smoker) +
                     (smoker * C_Age_Smoker_Black_Female * Math.Log(age) * smoker) +
                     (diabetes * C_Diabetes_Black_Female * diabetes);
@@ -123,8 +124,8 @@ public class CRA_Service : ICRA_Service
                     (C_Age_HDL_Chol_White_Male * Math.Log(age) * Math.Log(hdlCholesterol)) +
                     (onHypertensionMed * C_On_Hypertension_Meds_White_Male * Math.Log(systolicBloodPressure)) +
                     (onHypertensionMed * C_Age_On_Hypertension_Meds_White_Male * Math.Log(age) * Math.Log(systolicBloodPressure)) +
-                    (onHypertensionMed == 0 ? C_Off_Hypertension_Meds_White_Male * Math.Log(systolicBloodPressure) : 0) +
-                    (onHypertensionMed == 0 ? C_Age_Off_Hypertension_Meds_White_Male * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Off_Hypertension_Meds_White_Male * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Age_Off_Hypertension_Meds_White_Male * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
                     (smoker * C_Smoker_White_Male * smoker) +
                     (smoker * C_Age_Smoker_White_Male * Math.Log(age) * smoker) +
                     (diabetes * C_Diabetes_White_Male * diabetes);
@@ -140,8 +141,8 @@ public class CRA_Service : ICRA_Service
                     (C_Age_HDL_Chol_White_Female * Math.Log(age) * Math.Log(hdlCholesterol)) +
                     (onHypertensionMed * C_On_Hypertension_Meds_White_Female * Math.Log(systolicBloodPressure)) +
                     (onHypertensionMed * C_Age_On_Hypertension_Meds_White_Female * Math.Log(age) * Math.Log(systolicBloodPressure)) +
-                    (onHypertensionMed == 0 ? C_Off_Hypertension_Meds_White_Female * Math.Log(systolicBloodPressure) : 0) +
-                    (onHypertensionMed == 0 ? C_Age_Off_Hypertension_Meds_White_Female * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Off_Hypertension_Meds_White_Female * Math.Log(systolicBloodPressure) : 0) +
+                    (onHypertensionMed == 1 ? C_Age_Off_Hypertension_Meds_White_Female * Math.Log(age) * Math.Log(systolicBloodPressure) : 0) +
                     (smoker * C_Smoker_White_Female * smoker) +
                     (smoker * C_Age_Smoker_White_Female * Math.Log(age) * smoker) +
                     (diabetes * C_Diabetes_White_Female * diabetes);

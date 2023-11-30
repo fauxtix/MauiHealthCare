@@ -61,12 +61,16 @@ public partial class CardioRiskAsessmentPage : ContentPage
 
     private void OnMaleClicked(object sender, EventArgs e)
     {
-        _viewmodel.Sex = 1; // Assuming 2 represents Male
+        _viewmodel.Sex = 1; 
+        MaleButton.BackgroundColor = Colors.SteelBlue;
+        FemaleButton.BackgroundColor = Colors.Green; 
     }
 
     private void OnFemaleClicked(object sender, EventArgs e)
     {
-        _viewmodel.Sex = 2; // Assuming 1 represents Female
+        _viewmodel.Sex = 2; 
+        FemaleButton.BackgroundColor = Colors.Yellow; 
+        MaleButton.BackgroundColor = Colors.Red; 
     }
     private void OnSmokerYesClicked(object sender, EventArgs e)
     {
@@ -94,6 +98,24 @@ public partial class CardioRiskAsessmentPage : ContentPage
     }
     private void CaucasianSwitch_Toggled(object sender, ToggledEventArgs e)
     {
-        _viewmodel.Caucasian = CaucasianSwitch.IsToggled? 1:2;
+        _viewmodel.Caucasian = CaucasianSwitch.IsToggled ? 1 : 0;
+    }
+
+    private void SmokerSwitch_Toggled(object sender, ToggledEventArgs e)
+    {
+        _viewmodel.Smoker = SmokerSwitch.IsToggled ? 1 : 0;
+
+    }
+
+    private void DiabetesSwitch_Toggled(object sender, ToggledEventArgs e)
+    {
+        _viewmodel.Diabetes = DiabetesSwitch.IsToggled ? 1 : 0;
+
+    }
+
+    private void OnHypertensionMedSwitch_Toggled(object sender, ToggledEventArgs e)
+    {
+        _viewmodel.OnHypertensionMed = OnHypertensionMedSwitch.IsToggled ? 1 : 0;
+
     }
 }

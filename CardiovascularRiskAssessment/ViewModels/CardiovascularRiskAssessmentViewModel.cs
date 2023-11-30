@@ -45,6 +45,15 @@ public partial class CardiovascularRiskAssessmentViewModel : ObservableObject
     [RelayCommand]
     public void CalculateCRA()
     {
+        var validationResultOk = _validationService.ValidateAll(Age.ToString(),
+            SystolicBloodPressure.ToString(),
+            TotalCholesterol.ToString(),
+            HDLCholesterol.ToString());
+        if (validationResultOk is not null)
+        {
+            return;
+        }
+
         var result = _service.Calculate10YearRisk(Age,
                                                   Sex,
                                                   Caucasian,
