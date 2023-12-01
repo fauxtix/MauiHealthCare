@@ -3,6 +3,7 @@ using CardiovascularRiskAssessment.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using System.Text;
 
 namespace CardiovascularRiskAssessment.ViewModels;
 public partial class CardiovascularRiskAssessmentViewModel : ObservableObject
@@ -45,12 +46,18 @@ public partial class CardiovascularRiskAssessmentViewModel : ObservableObject
     [RelayCommand]
     public void CalculateCRA()
     {
-        var validationResultOk = _validationService.ValidateAll(Age.ToString(),
+        var validationResult = _validationService.ValidateAll(Age.ToString(),
             SystolicBloodPressure.ToString(),
             TotalCholesterol.ToString(),
             HDLCholesterol.ToString());
-        if (validationResultOk is not null)
+        if (validationResult.Count > 0)
         {
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in validationResult)
+            {
+                sb.AppendLine(item.Message.ToString());
+            }
+            Shell.Current.DisplayAlert("Validação", sb.ToString(), "Voltar");
             return;
         }
 
