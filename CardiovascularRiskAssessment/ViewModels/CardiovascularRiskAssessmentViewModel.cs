@@ -1,4 +1,5 @@
-﻿using CardiovascularRiskAssessment.Models;
+﻿using CardiovascularRiskAssessment.Enums;
+using CardiovascularRiskAssessment.Models;
 using CardiovascularRiskAssessment.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -13,15 +14,17 @@ public partial class CardiovascularRiskAssessmentViewModel : ObservableObject
     [ObservableProperty]
     private int _age;
     [ObservableProperty]
-    private int _sex;
+    private AppEnums.Gender _gender;
+    [ObservableProperty]
+    private AppEnums.Race _race;
     [ObservableProperty]
     private double _systolicBloodPressure;
     [ObservableProperty]
-    private int _onHypertensionMed;
+    private bool _onHypertensionMed;
     [ObservableProperty]
-    private int _diabetes;
+    private bool _diabetes;
     [ObservableProperty]
-    private int _smoker;
+    private bool _smoker;
     [ObservableProperty]
     private double _totalCholesterol;
     [ObservableProperty]
@@ -62,8 +65,8 @@ public partial class CardiovascularRiskAssessmentViewModel : ObservableObject
         }
 
         var result = _service.Calculate10YearRisk(Age,
-                                                  Sex,
-                                                  Caucasian,
+                                                  Gender,
+                                                  Race,
                                                   SystolicBloodPressure,
                                                   OnHypertensionMed,
                                                   Diabetes,

@@ -44,6 +44,7 @@ White or Other Race Female:
     Total Cholesterol: [Your desired value]
     HDL Cholesterol: [Your desired value]
 */
+using CardiovascularRiskAssessment.Enums;
 using CardiovascularRiskAssessment.ViewModels;
 
 namespace CardiovascularRiskAssessment.Pages;
@@ -61,61 +62,61 @@ public partial class CardioRiskAsessmentPage : ContentPage
 
     private void OnMaleClicked(object sender, EventArgs e)
     {
-        _viewmodel.Sex = 1; 
+        _viewmodel.Gender = AppEnums.Gender.Male; 
         MaleButton.BackgroundColor = Colors.SteelBlue;
         FemaleButton.BackgroundColor = Colors.Green; 
     }
 
     private void OnFemaleClicked(object sender, EventArgs e)
     {
-        _viewmodel.Sex = 2; 
+        _viewmodel.Gender = AppEnums.Gender.Female; 
         FemaleButton.BackgroundColor = Colors.Yellow; 
         MaleButton.BackgroundColor = Colors.Red; 
     }
     private void OnSmokerYesClicked(object sender, EventArgs e)
     {
-        _viewmodel.Smoker = 1; // Assuming 1 represents "Yes"
+        _viewmodel.Smoker = true; 
     }
     private void OnSmokerNoClicked(object sender, EventArgs e)
     {
-        _viewmodel.Smoker = 0; // Assuming 0 represents "No"
+        _viewmodel.Smoker = false; 
     }
     private void OnHipertensionMedicatedYesClicked(object sender, EventArgs e)
     {
-        _viewmodel.OnHypertensionMed = 1; // Assuming 1 represents "Yes"
+        _viewmodel.OnHypertensionMed = true; 
     }
     private void OnHipertensionMedicatedNoClicked(object sender, EventArgs e)
     {
-        _viewmodel.OnHypertensionMed = 0; // Assuming 0 represents "No"
+        _viewmodel.OnHypertensionMed = false; 
     }
     private void OnDiabetesYesClicked(object sender, EventArgs e)
     {
-        _viewmodel.Diabetes = 1; // Assuming 1 represents "Yes"
+        _viewmodel.Diabetes = true; 
     }
     private void OnDiabetesNoClicked(object sender, EventArgs e)
     {
-        _viewmodel.Diabetes = 0; // Assuming 0 represents "No"
+        _viewmodel.Diabetes = false;
     }
     private void CaucasianSwitch_Toggled(object sender, ToggledEventArgs e)
     {
-        _viewmodel.Caucasian = CaucasianSwitch.IsToggled ? 1 : 0;
+        _viewmodel.Race = CaucasianSwitch.IsToggled ? AppEnums.Race.White  : AppEnums.Race.Black;
     }
 
     private void SmokerSwitch_Toggled(object sender, ToggledEventArgs e)
     {
-        _viewmodel.Smoker = SmokerSwitch.IsToggled ? 1 : 0;
+        _viewmodel.Smoker = SmokerSwitch.IsToggled ? true : false;
 
     }
 
     private void DiabetesSwitch_Toggled(object sender, ToggledEventArgs e)
     {
-        _viewmodel.Diabetes = DiabetesSwitch.IsToggled ? 1 : 0;
+        _viewmodel.Diabetes = DiabetesSwitch.IsToggled ? true : false;
 
     }
 
     private void OnHypertensionMedSwitch_Toggled(object sender, ToggledEventArgs e)
     {
-        _viewmodel.OnHypertensionMed = OnHypertensionMedSwitch.IsToggled ? 1 : 0;
+        _viewmodel.OnHypertensionMed = OnHypertensionMedSwitch.IsToggled ? true : false;
 
     }
 }
