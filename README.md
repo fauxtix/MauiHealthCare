@@ -10,5 +10,5 @@ Continuing my learning with .Net NAUI, I've created two apps for the healthcare 
 
 ## Important desclaimer
 
-This API is a work in progress and is offered as an open source project as is, without any guarantees. 
+This app is a work in progress and is offered as an open source project as is, without any guarantees. 
 It is expressly not intended for use in clinical systems with real patients.
